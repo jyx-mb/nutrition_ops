@@ -1,0 +1,9 @@
+[project]
+name = "nutrition_ops"
+version = "0.1.0"
+description = "Educational MLOps pipeline: food recommendations from Swedish Food Agency open data" 
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "requests>=2.34.2",
+]

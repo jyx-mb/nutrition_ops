@@ -1,0 +1,15 @@
+{
+  "source": "Livsmedelsverket (Swedish Food Agency) Food Database",
+  "source_api": "https://dataportal.livsmedelsverket.se/livsmedel/api/v1",
+  "retrieval_date": "2026-06-20T21:44:32.644662+00:00",
+  "apiVersion": "1.0.0",
+  "sprak": 2,
+  "expected_count": 2575,
+  "received_count": 2575,
+  "measurements_total": 150472,
+  "failures": 0,
+  "max_record_version": "2025-10-29T14:27:35.13",
+  "license": "CC BY 4.0",
+  "attribution": "Source: Livsmedelsverket (Swedish Food Agency), CC BY 4.0",
+  "note": "data unmodified - faithful copy, no unit conversions"
+}
