@@ -10,3 +10,7 @@ wheels/
 .venv
 .DS_Store
 harvest_raw.json
+
+# MLflow local store + artifacts (Level 2) — keep the DB and model files out of git
+mlflow.db
+mlruns/

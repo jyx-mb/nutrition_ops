@@ -3,6 +3,10 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier             
 from sklearn.metrics import accuracy_score, classification_report  
+import mlflow
+import mlflow.sklearn       ## sub-
+
+mlflow.set_experiment("food_group_baseline")
 data = pd.read_csv("model_data.csv")                      
 
 y = data["food_group"]                                    
@@ -21,13 +25,22 @@ print("test:", X_test.shape)
 print("X:", X.shape)                                      
 print("y:", y.shape)                                      
 
-#/ train the baseline tree, then grade it on the unseen test set
-model = DecisionTreeClassifier(random_state=42)  
-model.fit(X_train, y_train)                       
+#/ train + grade the baseline INSIDE one tracked MLflow run
+with mlflow.start_run():                                      
+    mlflow.log_param("model_type", "DecisionTreeClassifier")  
+    mlflow.log_param("random_state", 42)                      
+    mlflow.log_param("test_size", 0.2)                        
+    mlflow.log_param("n_features", X.shape[1])                
 
-predictions = model.predict(X_test)              
+    model = DecisionTreeClassifier(random_state=42)           
+    model.fit(X_train, y_train)                               
 
-accuracy = accuracy_score(y_test, predictions)   
-print("accuracy:", round(accuracy, 3))           
+    predictions = model.predict(X_test)                       
 
-print(classification_report(y_test, predictions))
+    accuracy = accuracy_score(y_test, predictions)            
+    mlflow.log_metric("accuracy", accuracy)                   
+    print("accuracy:", round(accuracy, 3))                    
+
+    mlflow.sklearn.log_model(model, name="model")             
+
+    print(classification_report(y_test, predictions))         
