@@ -1,0 +1,2576 @@
+nummer,food_group
+1,Fats & oils
+2,Fats & oils
+3,Fats & oils
+4,Other
+5,Fats & oils
+6,Fats & oils
+10,Fats & oils
+12,Fats & oils
+13,Fats & oils
+17,Fats & oils
+20,Fats & oils
+21,Other
+22,Dairy & eggs
+23,Fats & oils
+24,Fats & oils
+25,Other
+26,Other
+29,Fats & oils
+30,Fats & oils
+31,Fats & oils
+33,Fats & oils
+34,Fats & oils
+35,Fats & oils
+37,Fats & oils
+38,Fats & oils
+39,Fats & oils
+40,Fats & oils
+41,Fats & oils
+42,Fruit & veg
+45,Fruit & veg
+49,Fruit & veg
+50,Other
+51,Other
+52,Fruit & veg
+53,Other
+55,Other
+56,Dairy & eggs
+57,Fruit & veg
+58,Other
+59,Other
+60,Fruit & veg
+62,Other
+63,Other
+64,Other
+66,Dairy & eggs
+68,Fats & oils
+69,Fats & oils
+70,Dairy & eggs
+71,Dairy & eggs
+72,Dairy & eggs
+73,Dairy & eggs
+74,Dairy & eggs
+75,Other
+76,Other
+77,Dairy & eggs
+78,Dairy & eggs
+79,Dairy & eggs
+80,Dairy & eggs
+81,Dairy & eggs
+82,Dairy & eggs
+83,Fats & oils
+84,Dairy & eggs
+85,Dairy & eggs
+86,Fats & oils
+87,Dairy & eggs
+92,Dairy & eggs
+93,Dairy & eggs
+94,Dairy & eggs
+95,Dairy & eggs
+96,Dairy & eggs
+97,Dairy & eggs
+98,Dairy & eggs
+100,Dairy & eggs
+101,Dairy & eggs
+102,Dairy & eggs
+103,Dairy & eggs
+104,Dairy & eggs
+105,Dairy & eggs
+107,Dairy & eggs
+108,Dairy & eggs
+109,Dairy & eggs
+110,Dairy & eggs
+111,Dairy & eggs
+113,Other
+114,Dairy & eggs
+115,Dairy & eggs
+116,Sweets
+118,Dairy & eggs
+119,Dairy & eggs
+120,Dairy & eggs
+122,Sweets
+123,Dairy & eggs
+124,Dairy & eggs
+126,Dairy & eggs
+127,Dairy & eggs
+128,Dairy & eggs
+130,Dairy & eggs
+133,Dairy & eggs
+135,Dairy & eggs
+136,Dairy & eggs
+137,Dairy & eggs
+142,Dairy & eggs
+147,Dairy & eggs
+148,Dairy & eggs
+150,Dairy & eggs
+151,Dairy & eggs
+152,Other
+154,Dairy & eggs
+156,Sweets
+157,Sweets
+158,Sweets
+160,Dairy & eggs
+162,Grains & bread
+163,Grains & bread
+164,Grains & bread
+165,Grains & bread
+166,Grains & bread
+167,Grains & bread
+168,Grains & bread
+169,Grains & bread
+170,Grains & bread
+171,Grains & bread
+172,Grains & bread
+173,Grains & bread
+174,Grains & bread
+175,Grains & bread
+178,Dairy & eggs
+180,Grains & bread
+181,Sweets
+182,Grains & bread
+183,Sweets
+185,Grains & bread
+186,Grains & bread
+187,Grains & bread
+188,Sweets
+190,Grains & bread
+191,Grains & bread
+193,Grains & bread
+194,Other
+195,Grains & bread
+198,Grains & bread
+200,Grains & bread
+201,Grains & bread
+202,Grains & bread
+204,Dairy & eggs
+205,Other
+206,Grains & bread
+207,Grains & bread
+208,Grains & bread
+209,Grains & bread
+210,Dairy & eggs
+213,Grains & bread
+214,Grains & bread
+216,Grains & bread
+217,Dairy & eggs
+219,Grains & bread
+222,Dairy & eggs
+224,Grains & bread
+225,Grains & bread
+226,Grains & bread
+227,Grains & bread
+229,Other
+230,Fruit & veg
+231,Fruit & veg
+233,Fruit & veg
+234,Fruit & veg
+235,Fruit & veg
+236,Fruit & veg
+237,Fruit & veg
+238,Fats & oils
+241,Fruit & veg
+242,Fruit & veg
+244,Fruit & veg
+245,Fruit & veg
+246,Fruit & veg
+248,Meat & fish
+250,Meat & fish
+252,Meat & fish
+253,Meat & fish
+254,Meat & fish
+255,Other
+256,Meat & fish
+257,Dairy & eggs
+258,Dairy & eggs
+259,Dairy & eggs
+260,Fruit & veg
+261,Dairy & eggs
+262,Other
+263,Fruit & veg
+264,Fruit & veg
+266,Fruit & veg
+268,Dairy & eggs
+270,Dairy & eggs
+271,Fruit & veg
+272,Fruit & veg
+273,Fruit & veg
+274,Fruit & veg
+275,Dairy & eggs
+277,Dairy & eggs
+278,Dairy & eggs
+279,Dairy & eggs
+280,Dairy & eggs
+281,Fruit & veg
+282,Fruit & veg
+284,Dairy & eggs
+286,Fruit & veg
+287,Other
+288,Other
+289,Fruit & veg
+290,Other
+291,Other
+292,Other
+293,Other
+294,Other
+295,Other
+296,Other
+297,Other
+298,Other
+299,Fruit & veg
+300,Fruit & veg
+301,Fruit & veg
+302,Fruit & veg
+304,Other
+305,Fruit & veg
+306,Fruit & veg
+307,Fruit & veg
+308,Fruit & veg
+310,Other
+314,Sweets
+315,Fruit & veg
+316,Other
+317,Other
+319,Other
+320,Other
+321,Other
+322,Other
+323,Other
+324,Fruit & veg
+325,Other
+326,Other
+327,Other
+328,Other
+329,Fruit & veg
+330,Fruit & veg
+331,Fruit & veg
+332,Fruit & veg
+333,Fruit & veg
+334,Other
+335,Other
+336,Other
+337,Other
+338,Other
+339,Other
+340,Other
+342,Other
+343,Other
+344,Fruit & veg
+345,Fruit & veg
+346,Fruit & veg
+347,Fruit & veg
+348,Other
+349,Other
+350,Other
+351,Other
+352,Other
+353,Other
+354,Other
+355,Fruit & veg
+357,Fruit & veg
+358,Fruit & veg
+359,Fruit & veg
+361,Other
+362,Other
+364,Fruit & veg
+365,Fats & oils
+366,Other
+367,Other
+368,Fruit & veg
+369,Fruit & veg
+370,Fruit & veg
+371,Other
+372,Other
+374,Fruit & veg
+376,Other
+377,Other
+378,Other
+379,Other
+380,Other
+381,Other
+382,Other
+383,Fruit & veg
+384,Other
+385,Fruit & veg
+386,Fruit & veg
+387,Fruit & veg
+388,Fruit & veg
+389,Fruit & veg
+390,Fruit & veg
+392,Other
+393,Other
+395,Fruit & veg
+397,Fruit & veg
+400,Fruit & veg
+401,Other
+402,Fats & oils
+403,Fruit & veg
+404,Other
+405,Other
+406,Fruit & veg
+407,Fruit & veg
+408,Fruit & veg
+410,Fruit & veg
+411,Fruit & veg
+412,Fruit & veg
+413,Fruit & veg
+414,Fruit & veg
+415,Other
+416,Fruit & veg
+417,Other
+418,Other
+419,Other
+420,Fruit & veg
+421,Fruit & veg
+422,Fruit & veg
+423,Other
+424,Fats & oils
+425,Fats & oils
+426,Fruit & veg
+427,Fruit & veg
+428,Fruit & veg
+429,Fruit & veg
+430,Fruit & veg
+431,Other
+432,Fruit & veg
+433,Other
+434,Other
+435,Other
+436,Fruit & veg
+437,Other
+438,Dairy & eggs
+439,Fruit & veg
+440,Fruit & veg
+441,Fruit & veg
+442,Dairy & eggs
+443,Dairy & eggs
+444,Fruit & veg
+445,Other
+446,Fats & oils
+447,Fruit & veg
+448,Fruit & veg
+450,Other
+451,Other
+452,Other
+453,Fruit & veg
+454,Other
+455,Fats & oils
+456,Other
+457,Fruit & veg
+458,Fruit & veg
+459,Fruit & veg
+460,Fruit & veg
+461,Fruit & veg
+462,Other
+464,Fruit & veg
+465,Fruit & veg
+466,Fruit & veg
+467,Fruit & veg
+468,Sweets
+469,Other
+470,Fats & oils
+471,Fruit & veg
+472,Fruit & veg
+473,Fruit & veg
+478,Fruit & veg
+479,Fruit & veg
+480,Grains & bread
+481,Fruit & veg
+482,Fruit & veg
+484,Dairy & eggs
+486,Fruit & veg
+487,Sweets
+488,Other
+489,Other
+490,Other
+491,Other
+492,Other
+493,Dairy & eggs
+494,Dairy & eggs
+495,Fruit & veg
+496,Dairy & eggs
+497,Fruit & veg
+498,Dairy & eggs
+499,Dairy & eggs
+500,Fruit & veg
+501,Fats & oils
+502,Fruit & veg
+503,Fruit & veg
+504,Fruit & veg
+505,Meat & fish
+506,Other
+508,Meat & fish
+510,Meat & fish
+511,Fruit & veg
+512,Fruit & veg
+513,Meat & fish
+515,Other
+518,Meat & fish
+519,Meat & fish
+520,Other
+521,Other
+522,Other
+523,Other
+524,Sweets
+525,Other
+526,Other
+527,Sweets
+528,Dairy & eggs
+529,Dairy & eggs
+530,Fruit & veg
+531,Fruit & veg
+532,Dairy & eggs
+535,Fruit & veg
+537,Other
+538,Meat & fish
+539,Meat & fish
+543,Fruit & veg
+544,Fruit & veg
+545,Fruit & veg
+546,Other
+547,Other
+548,Sweets
+549,Other
+550,Other
+551,Fruit & veg
+552,Other
+553,Other
+554,Other
+555,Other
+556,Other
+557,Other
+558,Other
+559,Other
+560,Fruit & veg
+561,Other
+562,Other
+563,Other
+564,Other
+565,Fruit & veg
+566,Other
+567,Other
+568,Other
+569,Other
+570,Other
+571,Other
+572,Other
+573,Other
+574,Other
+575,Other
+576,Other
+577,Other
+578,Fruit & veg
+579,Fruit & veg
+580,Other
+581,Other
+582,Other
+583,Other
+584,Other
+585,Other
+586,Other
+587,Other
+588,Fruit & veg
+589,Fruit & veg
+590,Other
+591,Other
+592,Sweets
+593,Other
+597,Other
+598,Fruit & veg
+599,Other
+600,Other
+601,Other
+602,Other
+603,Other
+604,Other
+605,Other
+606,Other
+607,Other
+608,Other
+609,Other
+610,Other
+611,Fruit & veg
+612,Fruit & veg
+613,Other
+614,Other
+617,Sweets
+618,Other
+619,Sweets
+624,Sweets
+625,Sweets
+626,Sweets
+627,Sweets
+628,Sweets
+629,Fruit & veg
+630,Sweets
+632,Sweets
+633,Sweets
+634,Sweets
+635,Fruit & veg
+637,Fruit & veg
+638,Fruit & veg
+641,Fruit & veg
+642,Fruit & veg
+643,Fruit & veg
+645,Other
+646,Other
+647,Fruit & veg
+649,Other
+652,Other
+654,Dairy & eggs
+655,Grains & bread
+657,Other
+658,Other
+659,Fruit & veg
+660,Other
+661,Fruit & veg
+662,Other
+664,Other
+665,Other
+670,Other
+672,Sweets
+675,Other
+676,Grains & bread
+677,Grains & bread
+678,Grains & bread
+679,Grains & bread
+680,Grains & bread
+681,Grains & bread
+682,Other
+683,Grains & bread
+684,Grains & bread
+685,Other
+694,Grains & bread
+695,Grains & bread
+696,Other
+699,Other
+700,Grains & bread
+702,Grains & bread
+703,Grains & bread
+704,Grains & bread
+705,Grains & bread
+706,Fruit & veg
+707,Grains & bread
+708,Grains & bread
+709,Grains & bread
+710,Grains & bread
+711,Grains & bread
+712,Grains & bread
+713,Sweets
+714,Grains & bread
+716,Sweets
+719,Grains & bread
+721,Sweets
+724,Grains & bread
+725,Grains & bread
+726,Sweets
+727,Sweets
+728,Sweets
+732,Other
+733,Dairy & eggs
+734,Dairy & eggs
+735,Dairy & eggs
+736,Dairy & eggs
+737,Dairy & eggs
+739,Meat & fish
+740,Dairy & eggs
+741,Other
+742,Dairy & eggs
+743,Dairy & eggs
+744,Dairy & eggs
+745,Dairy & eggs
+746,Fruit & veg
+747,Dairy & eggs
+748,Other
+750,Other
+751,Other
+752,Other
+754,Other
+755,Other
+756,Meat & fish
+757,Meat & fish
+758,Meat & fish
+759,Meat & fish
+760,Meat & fish
+761,Meat & fish
+762,Meat & fish
+763,Meat & fish
+764,Meat & fish
+765,Meat & fish
+766,Meat & fish
+767,Dairy & eggs
+768,Meat & fish
+769,Other
+770,Other
+771,Other
+772,Other
+773,Dairy & eggs
+774,Dairy & eggs
+775,Meat & fish
+776,Meat & fish
+777,Meat & fish
+778,Other
+779,Dairy & eggs
+780,Dairy & eggs
+781,Dairy & eggs
+782,Dairy & eggs
+783,Dairy & eggs
+784,Fruit & veg
+785,Dairy & eggs
+786,Dairy & eggs
+787,Dairy & eggs
+788,Other
+789,Dairy & eggs
+792,Dairy & eggs
+793,Dairy & eggs
+795,Dairy & eggs
+796,Dairy & eggs
+797,Sweets
+804,Grains & bread
+810,Grains & bread
+811,Grains & bread
+814,Grains & bread
+817,Grains & bread
+818,Grains & bread
+819,Other
+824,Grains & bread
+825,Other
+826,Grains & bread
+827,Grains & bread
+828,Other
+829,Other
+830,Other
+831,Other
+832,Other
+833,Grains & bread
+834,Grains & bread
+835,Fruit & veg
+836,Fruit & veg
+838,Dairy & eggs
+839,Dairy & eggs
+840,Grains & bread
+841,Grains & bread
+842,Other
+844,Fats & oils
+845,Grains & bread
+846,Grains & bread
+848,Grains & bread
+852,Dairy & eggs
+853,Grains & bread
+856,Meat & fish
+858,Meat & fish
+861,Grains & bread
+862,Meat & fish
+866,Dairy & eggs
+867,Grains & bread
+869,Other
+870,Dairy & eggs
+872,Dairy & eggs
+873,Other
+874,Fruit & veg
+875,Fruit & veg
+877,Fruit & veg
+878,Fruit & veg
+879,Fruit & veg
+880,Fruit & veg
+881,Fruit & veg
+883,Fruit & veg
+884,Other
+886,Fruit & veg
+887,Fruit & veg
+888,Other
+889,Fruit & veg
+890,Fruit & veg
+891,Fruit & veg
+897,Meat & fish
+898,Other
+900,Meat & fish
+901,Fruit & veg
+902,Fruit & veg
+903,Other
+904,Fruit & veg
+905,Fruit & veg
+906,Grains & bread
+907,Fruit & veg
+908,Fruit & veg
+909,Fruit & veg
+910,Fruit & veg
+911,Meat & fish
+912,Dairy & eggs
+915,Fruit & veg
+916,Meat & fish
+919,Other
+920,Meat & fish
+921,Meat & fish
+922,Meat & fish
+923,Meat & fish
+924,Meat & fish
+925,Meat & fish
+926,Meat & fish
+927,Meat & fish
+928,Meat & fish
+930,Other
+931,Other
+932,Other
+933,Meat & fish
+934,Meat & fish
+935,Meat & fish
+936,Meat & fish
+937,Meat & fish
+938,Meat & fish
+939,Meat & fish
+940,Meat & fish
+941,Meat & fish
+942,Meat & fish
+943,Meat & fish
+944,Meat & fish
+945,Meat & fish
+946,Meat & fish
+947,Meat & fish
+948,Meat & fish
+949,Meat & fish
+950,Meat & fish
+951,Meat & fish
+953,Meat & fish
+954,Meat & fish
+955,Meat & fish
+956,Meat & fish
+957,Meat & fish
+958,Meat & fish
+959,Meat & fish
+960,Meat & fish
+961,Meat & fish
+962,Meat & fish
+963,Meat & fish
+965,Other
+966,Other
+967,Other
+968,Meat & fish
+969,Meat & fish
+970,Meat & fish
+971,Meat & fish
+972,Meat & fish
+973,Meat & fish
+974,Meat & fish
+975,Meat & fish
+976,Meat & fish
+977,Meat & fish
+978,Meat & fish
+980,Meat & fish
+981,Meat & fish
+982,Meat & fish
+983,Meat & fish
+984,Meat & fish
+985,Meat & fish
+986,Meat & fish
+987,Meat & fish
+988,Meat & fish
+989,Meat & fish
+990,Meat & fish
+991,Meat & fish
+992,Meat & fish
+995,Other
+996,Meat & fish
+997,Other
+998,Meat & fish
+999,Meat & fish
+1000,Meat & fish
+1001,Other
+1002,Meat & fish
+1003,Meat & fish
+1004,Meat & fish
+1005,Meat & fish
+1006,Meat & fish
+1008,Meat & fish
+1009,Meat & fish
+1010,Meat & fish
+1011,Meat & fish
+1012,Meat & fish
+1013,Meat & fish
+1014,Meat & fish
+1017,Meat & fish
+1018,Meat & fish
+1019,Meat & fish
+1022,Meat & fish
+1023,Meat & fish
+1024,Meat & fish
+1025,Meat & fish
+1027,Meat & fish
+1028,Meat & fish
+1029,Other
+1030,Meat & fish
+1031,Other
+1032,Meat & fish
+1033,Meat & fish
+1034,Meat & fish
+1035,Meat & fish
+1036,Meat & fish
+1037,Meat & fish
+1038,Meat & fish
+1039,Meat & fish
+1042,Meat & fish
+1043,Meat & fish
+1044,Meat & fish
+1045,Meat & fish
+1047,Meat & fish
+1048,Meat & fish
+1049,Meat & fish
+1050,Other
+1055,Meat & fish
+1056,Meat & fish
+1057,Meat & fish
+1058,Meat & fish
+1059,Meat & fish
+1060,Meat & fish
+1062,Meat & fish
+1063,Meat & fish
+1064,Meat & fish
+1065,Meat & fish
+1066,Meat & fish
+1068,Meat & fish
+1072,Meat & fish
+1073,Meat & fish
+1075,Meat & fish
+1078,Meat & fish
+1080,Other
+1081,Other
+1082,Dairy & eggs
+1083,Meat & fish
+1087,Meat & fish
+1088,Meat & fish
+1089,Meat & fish
+1090,Meat & fish
+1091,Meat & fish
+1094,Meat & fish
+1095,Meat & fish
+1096,Meat & fish
+1099,Meat & fish
+1100,Meat & fish
+1101,Meat & fish
+1102,Meat & fish
+1103,Meat & fish
+1104,Grains & bread
+1105,Meat & fish
+1106,Meat & fish
+1107,Meat & fish
+1108,Meat & fish
+1109,Meat & fish
+1110,Meat & fish
+1111,Meat & fish
+1112,Meat & fish
+1113,Meat & fish
+1114,Meat & fish
+1115,Meat & fish
+1116,Meat & fish
+1119,Meat & fish
+1120,Meat & fish
+1121,Meat & fish
+1124,Meat & fish
+1125,Meat & fish
+1126,Meat & fish
+1127,Meat & fish
+1128,Meat & fish
+1129,Meat & fish
+1130,Meat & fish
+1131,Meat & fish
+1132,Meat & fish
+1135,Dairy & eggs
+1136,Meat & fish
+1137,Meat & fish
+1138,Meat & fish
+1142,Meat & fish
+1145,Meat & fish
+1146,Fruit & veg
+1147,Fruit & veg
+1148,Meat & fish
+1149,Meat & fish
+1151,Other
+1153,Other
+1154,Other
+1155,Other
+1156,Other
+1157,Other
+1158,Other
+1159,Other
+1160,Other
+1161,Other
+1162,Meat & fish
+1163,Other
+1164,Meat & fish
+1165,Meat & fish
+1166,Meat & fish
+1167,Meat & fish
+1168,Meat & fish
+1169,Other
+1170,Meat & fish
+1171,Meat & fish
+1172,Fats & oils
+1173,Meat & fish
+1174,Meat & fish
+1175,Meat & fish
+1176,Meat & fish
+1177,Meat & fish
+1178,Other
+1180,Other
+1181,Meat & fish
+1182,Meat & fish
+1183,Other
+1184,Other
+1185,Other
+1186,Other
+1188,Meat & fish
+1189,Other
+1190,Meat & fish
+1191,Other
+1192,Meat & fish
+1193,Meat & fish
+1198,Dairy & eggs
+1199,Meat & fish
+1200,Other
+1201,Other
+1202,Other
+1203,Other
+1206,Meat & fish
+1207,Meat & fish
+1208,Dairy & eggs
+1209,Meat & fish
+1210,Meat & fish
+1211,Meat & fish
+1212,Meat & fish
+1213,Meat & fish
+1214,Meat & fish
+1215,Meat & fish
+1216,Meat & fish
+1217,Meat & fish
+1218,Meat & fish
+1219,Other
+1222,Meat & fish
+1223,Meat & fish
+1224,Meat & fish
+1225,Dairy & eggs
+1226,Dairy & eggs
+1227,Dairy & eggs
+1229,Dairy & eggs
+1230,Other
+1231,Other
+1232,Other
+1233,Dairy & eggs
+1235,Dairy & eggs
+1236,Meat & fish
+1237,Other
+1238,Other
+1240,Other
+1241,Meat & fish
+1242,Other
+1243,Meat & fish
+1244,Other
+1246,Meat & fish
+1247,Other
+1248,Other
+1249,Other
+1250,Meat & fish
+1251,Other
+1252,Other
+1253,Other
+1255,Meat & fish
+1256,Other
+1257,Other
+1258,Other
+1259,Other
+1260,Other
+1261,Other
+1262,Other
+1263,Other
+1265,Other
+1266,Meat & fish
+1267,Meat & fish
+1269,Meat & fish
+1270,Other
+1271,Fats & oils
+1272,Fruit & veg
+1273,Meat & fish
+1274,Meat & fish
+1275,Fats & oils
+1277,Other
+1278,Other
+1279,Other
+1280,Other
+1281,Meat & fish
+1282,Other
+1283,Fats & oils
+1284,Meat & fish
+1285,Sweets
+1286,Meat & fish
+1287,Meat & fish
+1288,Meat & fish
+1289,Meat & fish
+1290,Other
+1291,Other
+1292,Other
+1293,Meat & fish
+1294,Meat & fish
+1296,Fruit & veg
+1297,Meat & fish
+1298,Other
+1299,Meat & fish
+1300,Meat & fish
+1301,Meat & fish
+1302,Other
+1303,Other
+1304,Other
+1305,Other
+1306,Meat & fish
+1308,Other
+1309,Other
+1310,Other
+1311,Other
+1312,Other
+1313,Other
+1314,Other
+1315,Other
+1316,Meat & fish
+1317,Meat & fish
+1318,Other
+1319,Other
+1320,Other
+1321,Other
+1322,Meat & fish
+1323,Meat & fish
+1324,Meat & fish
+1325,Other
+1326,Other
+1327,Meat & fish
+1328,Meat & fish
+1329,Meat & fish
+1331,Meat & fish
+1332,Meat & fish
+1333,Meat & fish
+1334,Other
+1335,Meat & fish
+1336,Meat & fish
+1337,Meat & fish
+1338,Other
+1339,Meat & fish
+1340,Meat & fish
+1344,Meat & fish
+1345,Meat & fish
+1346,Meat & fish
+1347,Meat & fish
+1348,Meat & fish
+1349,Meat & fish
+1350,Dairy & eggs
+1351,Meat & fish
+1354,Meat & fish
+1356,Meat & fish
+1357,Meat & fish
+1358,Meat & fish
+1359,Meat & fish
+1360,Meat & fish
+1361,Meat & fish
+1362,Meat & fish
+1363,Meat & fish
+1364,Other
+1365,Other
+1366,Other
+1367,Fruit & veg
+1371,Meat & fish
+1372,Meat & fish
+1373,Meat & fish
+1374,Meat & fish
+1376,Meat & fish
+1377,Fats & oils
+1378,Fats & oils
+1379,Fats & oils
+1381,Other
+1382,Other
+1384,Other
+1385,Other
+1386,Other
+1387,Other
+1388,Other
+1389,Other
+1390,Other
+1391,Other
+1392,Other
+1393,Other
+1394,Other
+1395,Other
+1396,Other
+1397,Other
+1398,Other
+1399,Other
+1400,Other
+1403,Other
+1404,Other
+1406,Other
+1407,Other
+1408,Other
+1410,Dairy & eggs
+1411,Other
+1412,Other
+1413,Fruit & veg
+1414,Fruit & veg
+1416,Fruit & veg
+1417,Other
+1418,Dairy & eggs
+1419,Meat & fish
+1420,Meat & fish
+1421,Fats & oils
+1422,Meat & fish
+1423,Meat & fish
+1424,Meat & fish
+1425,Grains & bread
+1426,Meat & fish
+1427,Grains & bread
+1428,Meat & fish
+1429,Grains & bread
+1430,Other
+1431,Other
+1432,Other
+1433,Grains & bread
+1434,Meat & fish
+1435,Meat & fish
+1436,Meat & fish
+1437,Meat & fish
+1438,Meat & fish
+1439,Meat & fish
+1441,Meat & fish
+1442,Meat & fish
+1443,Meat & fish
+1444,Meat & fish
+1445,Meat & fish
+1446,Meat & fish
+1447,Meat & fish
+1448,Meat & fish
+1449,Meat & fish
+1450,Meat & fish
+1451,Meat & fish
+1452,Meat & fish
+1453,Meat & fish
+1454,Meat & fish
+1455,Meat & fish
+1456,Meat & fish
+1457,Meat & fish
+1458,Meat & fish
+1459,Meat & fish
+1460,Meat & fish
+1461,Meat & fish
+1462,Meat & fish
+1463,Meat & fish
+1464,Meat & fish
+1465,Meat & fish
+1466,Other
+1467,Meat & fish
+1468,Meat & fish
+1470,Meat & fish
+1471,Meat & fish
+1472,Fruit & veg
+1473,Meat & fish
+1474,Meat & fish
+1475,Meat & fish
+1476,Meat & fish
+1477,Meat & fish
+1478,Meat & fish
+1479,Meat & fish
+1480,Meat & fish
+1482,Meat & fish
+1483,Other
+1485,Meat & fish
+1486,Meat & fish
+1487,Meat & fish
+1488,Meat & fish
+1491,Meat & fish
+1492,Meat & fish
+1496,Meat & fish
+1497,Meat & fish
+1498,Meat & fish
+1500,Meat & fish
+1501,Meat & fish
+1503,Meat & fish
+1508,Meat & fish
+1509,Meat & fish
+1511,Meat & fish
+1512,Meat & fish
+1513,Meat & fish
+1514,Meat & fish
+1516,Meat & fish
+1518,Meat & fish
+1519,Meat & fish
+1521,Meat & fish
+1522,Meat & fish
+1523,Meat & fish
+1524,Meat & fish
+1526,Meat & fish
+1527,Meat & fish
+1528,Meat & fish
+1530,Meat & fish
+1531,Meat & fish
+1534,Meat & fish
+1535,Meat & fish
+1536,Meat & fish
+1537,Dairy & eggs
+1540,Meat & fish
+1541,Other
+1543,Other
+1544,Meat & fish
+1548,Meat & fish
+1551,Meat & fish
+1553,Meat & fish
+1554,Meat & fish
+1555,Meat & fish
+1557,Other
+1558,Other
+1559,Fats & oils
+1560,Other
+1561,Other
+1562,Other
+1563,Other
+1564,Other
+1565,Other
+1566,Dairy & eggs
+1567,Other
+1568,Other
+1569,Other
+1570,Other
+1571,Other
+1572,Other
+1573,Other
+1574,Other
+1575,Other
+1576,Other
+1577,Other
+1579,Other
+1580,Other
+1581,Fruit & veg
+1582,Dairy & eggs
+1584,Fruit & veg
+1585,Other
+1586,Other
+1587,Fruit & veg
+1588,Fruit & veg
+1589,Grains & bread
+1590,Dairy & eggs
+1591,Other
+1592,Other
+1593,Other
+1594,Grains & bread
+1595,Other
+1597,Grains & bread
+1598,Grains & bread
+1599,Grains & bread
+1600,Grains & bread
+1601,Grains & bread
+1602,Grains & bread
+1603,Grains & bread
+1604,Grains & bread
+1605,Other
+1606,Other
+1607,Fruit & veg
+1608,Sweets
+1609,Grains & bread
+1610,Grains & bread
+1611,Dairy & eggs
+1612,Sweets
+1613,Sweets
+1614,Other
+1615,Sweets
+1616,Sweets
+1617,Sweets
+1618,Sweets
+1619,Other
+1620,Other
+1621,Sweets
+1623,Other
+1624,Other
+1625,Sweets
+1626,Other
+1627,Sweets
+1628,Dairy & eggs
+1629,Other
+1630,Dairy & eggs
+1631,Sweets
+1632,Sweets
+1633,Other
+1636,Dairy & eggs
+1637,Sweets
+1638,Other
+1639,Other
+1640,Other
+1641,Other
+1642,Other
+1645,Sweets
+1646,Sweets
+1647,Sweets
+1648,Sweets
+1649,Sweets
+1650,Sweets
+1651,Sweets
+1652,Sweets
+1653,Other
+1654,Sweets
+1655,Sweets
+1656,Other
+1657,Sweets
+1658,Sweets
+1659,Fats & oils
+1660,Sweets
+1661,Sweets
+1662,Dairy & eggs
+1663,Sweets
+1664,Sweets
+1666,Other
+1667,Dairy & eggs
+1668,Dairy & eggs
+1669,Sweets
+1671,Other
+1672,Sweets
+1677,Other
+1678,Sweets
+1679,Sweets
+1681,Sweets
+1682,Sweets
+1683,Sweets
+1684,Sweets
+1685,Sweets
+1686,Sweets
+1687,Sweets
+1689,Dairy & eggs
+1690,Dairy & eggs
+1691,Dairy & eggs
+1692,Dairy & eggs
+1693,Dairy & eggs
+1694,Sweets
+1695,Sweets
+1696,Dairy & eggs
+1697,Dairy & eggs
+1698,Dairy & eggs
+1699,Dairy & eggs
+1700,Dairy & eggs
+1701,Dairy & eggs
+1702,Dairy & eggs
+1703,Dairy & eggs
+1705,Sweets
+1706,Dairy & eggs
+1707,Dairy & eggs
+1708,Dairy & eggs
+1712,Dairy & eggs
+1713,Dairy & eggs
+1714,Dairy & eggs
+1715,Dairy & eggs
+1716,Dairy & eggs
+1717,Dairy & eggs
+1719,Dairy & eggs
+1725,Other
+1726,Dairy & eggs
+1727,Dairy & eggs
+1728,Dairy & eggs
+1729,Other
+1730,Other
+1732,Fruit & veg
+1734,Other
+1740,Other
+1741,Fruit & veg
+1742,Other
+1743,Fruit & veg
+1744,Fruit & veg
+1745,Sweets
+1746,Fruit & veg
+1747,Fruit & veg
+1748,Fruit & veg
+1749,Other
+1750,Fruit & veg
+1751,Other
+1752,Sweets
+1758,Sweets
+1759,Dairy & eggs
+1760,Sweets
+1761,Sweets
+1762,Other
+1763,Dairy & eggs
+1764,Sweets
+1765,Sweets
+1766,Sweets
+1767,Fruit & veg
+1768,Sweets
+1769,Other
+1770,Other
+1771,Dairy & eggs
+1773,Other
+1775,Other
+1776,Grains & bread
+1777,Dairy & eggs
+1778,Sweets
+1779,Dairy & eggs
+1781,Other
+1782,Fruit & veg
+1783,Sweets
+1784,Sweets
+1785,Other
+1786,Fruit & veg
+1788,Other
+1789,Fruit & veg
+1790,Other
+1791,Sweets
+1792,Dairy & eggs
+1793,Fruit & veg
+1794,Other
+1795,Other
+1796,Sweets
+1797,Other
+1798,Sweets
+1800,Sweets
+1801,Sweets
+1802,Sweets
+1803,Sweets
+1804,Sweets
+1805,Sweets
+1806,Sweets
+1808,Sweets
+1809,Fruit & veg
+1810,Sweets
+1811,Fruit & veg
+1812,Other
+1814,Fruit & veg
+1815,Fruit & veg
+1817,Sweets
+1818,Sweets
+1819,Other
+1820,Other
+1821,Other
+1822,Other
+1827,Fruit & veg
+1828,Other
+1829,Other
+1830,Other
+1831,Other
+1832,Other
+1834,Other
+1837,Other
+1838,Other
+1840,Other
+1841,Fruit & veg
+1842,Other
+1843,Other
+1844,Other
+1845,Other
+1846,Sweets
+1847,Sweets
+1848,Sweets
+1849,Sweets
+1850,Sweets
+1851,Sweets
+1852,Sweets
+1853,Sweets
+1854,Sweets
+1855,Sweets
+1858,Sweets
+1859,Sweets
+1860,Sweets
+1861,Sweets
+1863,Other
+1864,Other
+1865,Other
+1867,Other
+1868,Other
+1869,Other
+1870,Other
+1871,Sweets
+1875,Sweets
+1876,Sweets
+1877,Fruit & veg
+1879,Sweets
+1880,Sweets
+1881,Sweets
+1882,Sweets
+1884,Sweets
+1886,Other
+1887,Sweets
+1888,Sweets
+1891,Sweets
+1892,Sweets
+1893,Sweets
+1894,Other
+1896,Sweets
+1897,Other
+1898,Other
+1899,Other
+1900,Other
+1901,Other
+1902,Other
+1903,Other
+1904,Other
+1905,Other
+1906,Other
+1907,Other
+1908,Other
+1909,Other
+1912,Other
+1914,Other
+1915,Other
+1916,Other
+1917,Other
+1918,Other
+1919,Other
+1920,Other
+1921,Other
+1922,Other
+1923,Other
+1924,Other
+1925,Other
+1926,Other
+1927,Other
+1929,Other
+1930,Grains & bread
+1931,Grains & bread
+1932,Grains & bread
+1933,Grains & bread
+1934,Grains & bread
+1935,Grains & bread
+1936,Grains & bread
+1938,Grains & bread
+1941,Grains & bread
+1945,Fruit & veg
+1946,Grains & bread
+1947,Other
+1948,Other
+1949,Other
+1950,Other
+1951,Other
+1953,Other
+1955,Other
+1956,Other
+1957,Other
+1958,Other
+1959,Other
+1960,Other
+1962,Other
+1963,Other
+1964,Other
+1965,Other
+1966,Other
+1967,Other
+1968,Fruit & veg
+1969,Fruit & veg
+1970,Other
+1971,Other
+1972,Other
+1973,Other
+1974,Other
+1975,Other
+1976,Other
+1977,Other
+1978,Other
+1979,Other
+1980,Other
+1981,Other
+1982,Dairy & eggs
+1983,Dairy & eggs
+1984,Dairy & eggs
+1985,Other
+1986,Dairy & eggs
+1987,Other
+1988,Dairy & eggs
+1989,Dairy & eggs
+1990,Dairy & eggs
+1991,Dairy & eggs
+1992,Other
+1993,Dairy & eggs
+1994,Other
+1995,Dairy & eggs
+1996,Dairy & eggs
+1997,Other
+1998,Dairy & eggs
+1999,Fats & oils
+2000,Fruit & veg
+2001,Other
+2002,Dairy & eggs
+2003,Dairy & eggs
+2004,Other
+2006,Other
+2007,Other
+2008,Grains & bread
+2009,Grains & bread
+2010,Fruit & veg
+2011,Fruit & veg
+2012,Other
+2024,Grains & bread
+2025,Grains & bread
+2027,Sweets
+2028,Sweets
+2029,Sweets
+2030,Sweets
+2031,Sweets
+2032,Grains & bread
+2033,Grains & bread
+2035,Meat & fish
+2036,Dairy & eggs
+2037,Dairy & eggs
+2039,Dairy & eggs
+2040,Fats & oils
+2041,Other
+2043,Dairy & eggs
+2044,Dairy & eggs
+2046,Dairy & eggs
+2048,Dairy & eggs
+2051,Sweets
+2052,Sweets
+2053,Sweets
+2054,Sweets
+2055,Sweets
+2056,Meat & fish
+2057,Grains & bread
+2058,Fruit & veg
+2059,Dairy & eggs
+2060,Dairy & eggs
+2061,Grains & bread
+2062,Grains & bread
+2063,Grains & bread
+2064,Other
+2065,Fruit & veg
+2066,Meat & fish
+2067,Grains & bread
+2068,Fruit & veg
+2069,Grains & bread
+2070,Dairy & eggs
+2071,Grains & bread
+2072,Sweets
+2073,Other
+2075,Other
+2078,Dairy & eggs
+2079,Dairy & eggs
+2080,Other
+2081,Other
+2083,Other
+2085,Dairy & eggs
+2092,Meat & fish
+2093,Other
+2096,Meat & fish
+2097,Meat & fish
+2098,Meat & fish
+2099,Meat & fish
+2100,Meat & fish
+2101,Meat & fish
+2103,Meat & fish
+2104,Other
+2107,Other
+2108,Meat & fish
+2109,Other
+2123,Grains & bread
+2124,Dairy & eggs
+2125,Other
+2128,Other
+2129,Sweets
+2133,Fruit & veg
+2134,Meat & fish
+2138,Meat & fish
+2139,Dairy & eggs
+2142,Dairy & eggs
+2144,Other
+2147,Dairy & eggs
+2160,Fruit & veg
+2161,Fruit & veg
+2162,Other
+2163,Dairy & eggs
+2164,Other
+2165,Meat & fish
+2173,Dairy & eggs
+2174,Dairy & eggs
+2184,Sweets
+2189,Fats & oils
+2190,Fats & oils
+2192,Fats & oils
+2197,Other
+2205,Dairy & eggs
+2214,Other
+2216,Other
+2217,Fruit & veg
+2218,Other
+2219,Sweets
+2220,Grains & bread
+2221,Grains & bread
+2222,Other
+2223,Grains & bread
+2225,Grains & bread
+2226,Dairy & eggs
+2227,Grains & bread
+2228,Other
+2229,Dairy & eggs
+2230,Dairy & eggs
+2231,Other
+2232,Other
+2233,Other
+2234,Fruit & veg
+2236,Meat & fish
+2238,Meat & fish
+2239,Meat & fish
+2240,Other
+2246,Sweets
+2255,Dairy & eggs
+2269,Other
+2294,Meat & fish
+2301,Other
+2302,Other
+2305,Other
+2306,Other
+2401,Fats & oils
+2403,Fats & oils
+2404,Fats & oils
+2412,Other
+2413,Meat & fish
+2468,Other
+2472,Fats & oils
+2474,Fats & oils
+2475,Grains & bread
+2477,Grains & bread
+2478,Grains & bread
+2479,Grains & bread
+2481,Grains & bread
+2482,Grains & bread
+2483,Grains & bread
+2484,Grains & bread
+2485,Grains & bread
+2490,Fats & oils
+2492,Meat & fish
+2499,Meat & fish
+2506,Meat & fish
+2507,Fruit & veg
+2508,Meat & fish
+2509,Other
+2510,Dairy & eggs
+2511,Other
+2512,Dairy & eggs
+2513,Grains & bread
+2514,Grains & bread
+2515,Grains & bread
+2516,Grains & bread
+2517,Grains & bread
+2518,Grains & bread
+2519,Grains & bread
+2520,Dairy & eggs
+2521,Grains & bread
+2522,Grains & bread
+2542,Meat & fish
+2547,Fruit & veg
+2548,Other
+2552,Other
+2555,Other
+2557,Fruit & veg
+2559,Other
+2561,Fruit & veg
+2565,Other
+2569,Other
+2570,Fruit & veg
+2605,Other
+2606,Other
+2608,Fruit & veg
+2609,Other
+2610,Other
+2612,Other
+2613,Other
+2614,Other
+2617,Fruit & veg
+2650,Meat & fish
+2651,Other
+2658,Fruit & veg
+2672,Fruit & veg
+2679,Other
+2753,Meat & fish
+2756,Dairy & eggs
+2758,Other
+2769,Other
+2774,Fruit & veg
+2775,Fruit & veg
+2808,Sweets
+2809,Sweets
+2826,Other
+2827,Meat & fish
+2863,Dairy & eggs
+2883,Other
+2886,Other
+2897,Other
+2899,Dairy & eggs
+2913,Dairy & eggs
+2930,Meat & fish
+2931,Meat & fish
+2932,Meat & fish
+2943,Meat & fish
+2949,Dairy & eggs
+2950,Meat & fish
+2963,Other
+2965,Dairy & eggs
+2969,Other
+2973,Other
+2977,Other
+2982,Meat & fish
+3008,Other
+3009,Dairy & eggs
+3011,Fruit & veg
+3035,Dairy & eggs
+3036,Meat & fish
+3051,Other
+3055,Other
+3056,Sweets
+3059,Other
+3064,Other
+3069,Other
+3071,Other
+3136,Other
+3139,Other
+3140,Other
+3141,Meat & fish
+3147,Sweets
+3213,Meat & fish
+3243,Other
+3247,Other
+3258,Other
+3262,Other
+3267,Other
+3281,Sweets
+3318,Meat & fish
+3323,Meat & fish
+3324,Other
+3334,Fruit & veg
+3433,Fats & oils
+3447,Grains & bread
+3499,Dairy & eggs
+3500,Meat & fish
+3518,Other
+3522,Other
+3564,Grains & bread
+3590,Sweets
+3591,Sweets
+3594,Meat & fish
+3602,Other
+3608,Meat & fish
+3609,Meat & fish
+3610,Meat & fish
+3618,Meat & fish
+3619,Meat & fish
+3620,Meat & fish
+3621,Meat & fish
+3627,Meat & fish
+3661,Other
+3668,Fruit & veg
+3681,Fruit & veg
+3710,Other
+3733,Other
+3752,Grains & bread
+3756,Grains & bread
+3760,Fruit & veg
+3761,Fruit & veg
+3762,Other
+3765,Other
+3771,Fruit & veg
+3772,Fruit & veg
+3786,Grains & bread
+3790,Other
+3791,Grains & bread
+3793,Grains & bread
+3794,Grains & bread
+3795,Grains & bread
+3797,Grains & bread
+3798,Other
+3800,Meat & fish
+3815,Other
+3816,Fruit & veg
+3817,Fruit & veg
+3818,Other
+3819,Dairy & eggs
+3820,Fruit & veg
+3821,Other
+3822,Other
+3823,Other
+3824,Other
+3825,Other
+3828,Grains & bread
+3840,Dairy & eggs
+3841,Dairy & eggs
+3845,Grains & bread
+3848,Fruit & veg
+3852,Dairy & eggs
+3855,Other
+3858,Fruit & veg
+3859,Fruit & veg
+3871,Fruit & veg
+3872,Fruit & veg
+3873,Fruit & veg
+3899,Other
+3919,Fats & oils
+3938,Other
+4011,Fruit & veg
+4025,Other
+4026,Fruit & veg
+4037,Meat & fish
+4042,Other
+4049,Other
+4052,Fruit & veg
+4074,Fats & oils
+4095,Fats & oils
+4105,Fats & oils
+4107,Fats & oils
+4112,Fats & oils
+4117,Other
+4123,Meat & fish
+4124,Meat & fish
+4126,Meat & fish
+4128,Fats & oils
+4131,Other
+4134,Dairy & eggs
+4135,Dairy & eggs
+4140,Dairy & eggs
+4157,Fruit & veg
+4160,Meat & fish
+4183,Meat & fish
+4187,Meat & fish
+4226,Other
+4227,Dairy & eggs
+4385,Fruit & veg
+4386,Fruit & veg
+4415,Fruit & veg
+4416,Fruit & veg
+4445,Fruit & veg
+4447,Grains & bread
+4448,Grains & bread
+4456,Other
+4457,Other
+4458,Fruit & veg
+4504,Fruit & veg
+4505,Other
+4511,Fruit & veg
+4512,Fruit & veg
+4513,Fruit & veg
+4514,Fruit & veg
+4515,Fruit & veg
+4516,Fruit & veg
+4518,Fruit & veg
+4519,Fruit & veg
+4520,Fruit & veg
+4521,Fruit & veg
+4579,Dairy & eggs
+4583,Meat & fish
+4586,Other
+4588,Other
+4589,Other
+4591,Grains & bread
+4600,Other
+4601,Meat & fish
+4602,Meat & fish
+4607,Other
+4608,Meat & fish
+4609,Meat & fish
+4610,Meat & fish
+4611,Other
+4612,Other
+4613,Other
+4615,Other
+4616,Other
+4617,Other
+4659,Fats & oils
+4661,Fats & oils
+4662,Other
+4663,Fats & oils
+4736,Grains & bread
+4937,Fruit & veg
+4938,Fats & oils
+4939,Other
+4941,Other
+4942,Other
+4946,Other
+4947,Fruit & veg
+5007,Other
+5043,Meat & fish
+5044,Other
+5045,Meat & fish
+5046,Other
+5047,Meat & fish
+5048,Other
+5049,Meat & fish
+5050,Other
+5058,Other
+5059,Meat & fish
+5060,Meat & fish
+5064,Other
+5065,Meat & fish
+5066,Meat & fish
+5067,Meat & fish
+5068,Meat & fish
+5085,Fats & oils
+5087,Other
+5136,Fruit & veg
+5147,Other
+5149,Other
+5150,Other
+5152,Other
+5153,Fruit & veg
+5155,Fruit & veg
+5184,Other
+5188,Fruit & veg
+5189,Grains & bread
+5190,Fruit & veg
+5191,Grains & bread
+5192,Grains & bread
+5193,Dairy & eggs
+5194,Fruit & veg
+5195,Other
+5196,Fruit & veg
+5218,Dairy & eggs
+5305,Grains & bread
+5338,Meat & fish
+5447,Meat & fish
+5452,Meat & fish
+5574,Dairy & eggs
+5606,Sweets
+5665,Meat & fish
+5726,Fruit & veg
+5727,Dairy & eggs
+5753,Dairy & eggs
+5756,Other
+5758,Other
+5759,Other
+5804,Grains & bread
+5833,Other
+5837,Meat & fish
+5847,Meat & fish
+5859,Other
+5860,Fruit & veg
+5861,Other
+5862,Other
+5863,Other
+5864,Other
+5865,Fruit & veg
+5866,Fruit & veg
+5867,Fruit & veg
+5868,Fruit & veg
+5869,Fruit & veg
+5870,Fruit & veg
+5871,Fruit & veg
+5872,Fruit & veg
+5875,Meat & fish
+5916,Other
+5926,Other
+5935,Other
+5942,Other
+5956,Dairy & eggs
+5957,Dairy & eggs
+5961,Dairy & eggs
+5963,Fruit & veg
+5965,Meat & fish
+5966,Meat & fish
+5967,Meat & fish
+5968,Other
+5969,Meat & fish
+5970,Meat & fish
+5973,Other
+5974,Grains & bread
+5978,Meat & fish
+5979,Sweets
+5999,Meat & fish
+6002,Meat & fish
+6003,Meat & fish
+6004,Meat & fish
+6005,Meat & fish
+6006,Meat & fish
+6007,Meat & fish
+6008,Meat & fish
+6009,Other
+6010,Meat & fish
+6038,Meat & fish
+6052,Dairy & eggs
+6053,Other
+6057,Meat & fish
+6058,Meat & fish
+6069,Dairy & eggs
+6070,Dairy & eggs
+6071,Other
+6076,Dairy & eggs
+6079,Other
+6081,Grains & bread
+6083,Grains & bread
+6084,Grains & bread
+6086,Grains & bread
+6087,Grains & bread
+6088,Dairy & eggs
+6089,Other
+6090,Other
+6091,Sweets
+6092,Sweets
+6093,Sweets
+6110,Grains & bread
+6113,Dairy & eggs
+6120,Meat & fish
+6121,Other
+6122,Fruit & veg
+6131,Fruit & veg
+6132,Meat & fish
+6133,Dairy & eggs
+6134,Fruit & veg
+6145,Grains & bread
+6146,Grains & bread
+6154,Other
+6157,Other
+6158,Other
+6159,Other
+6160,Other
+6164,Other
+6165,Fats & oils
+6166,Fats & oils
+6167,Fats & oils
+6168,Other
+6169,Other
+6170,Fats & oils
+6171,Other
+6172,Fats & oils
+6173,Meat & fish
+6174,Meat & fish
+6225,Meat & fish
+6231,Other
+6234,Grains & bread
+6235,Other
+6236,Dairy & eggs
+6239,Grains & bread
+6240,Other
+6245,Meat & fish
+6246,Other
+6247,Meat & fish
+6248,Meat & fish
+6249,Meat & fish
+6251,Other
+6252,Dairy & eggs
+6253,Dairy & eggs
+6254,Sweets
+6255,Sweets
+6256,Grains & bread
+6257,Other
+6259,Grains & bread
+6260,Other
+6261,Dairy & eggs
+6262,Grains & bread
+6263,Other
+6264,Fruit & veg
+6265,Fruit & veg
+6266,Grains & bread
+6267,Fruit & veg
+6268,Grains & bread
+6270,Fruit & veg
+6272,Other
+6273,Other
+6274,Fruit & veg
+6275,Grains & bread
+6276,Grains & bread
+6277,Grains & bread
+6279,Grains & bread
+6280,Grains & bread
+6281,Other
+6282,Meat & fish
+6283,Other
+6284,Other
+6285,Grains & bread
+6286,Grains & bread
+6287,Fruit & veg
+6288,Fruit & veg
+6289,Fruit & veg
+6290,Grains & bread
+6291,Fruit & veg
+6292,Grains & bread
+6293,Fruit & veg
+6294,Fruit & veg
+6295,Fruit & veg
+6298,Other
+6299,Other
+6300,Other
+6301,Fruit & veg
+6302,Fruit & veg
+6303,Grains & bread
+6304,Grains & bread
+6305,Grains & bread
+6306,Grains & bread
+6307,Grains & bread
+6309,Grains & bread
+6310,Grains & bread
+6311,Grains & bread
+6312,Grains & bread
+6313,Other
+6314,Dairy & eggs
+6330,Other
+6333,Other
+6334,Other
+6336,Other
+6337,Dairy & eggs
+6338,Other
+6341,Dairy & eggs
+6342,Meat & fish
+6345,Meat & fish
+6346,Meat & fish
+6348,Dairy & eggs
+6349,Fruit & veg
+6352,Fruit & veg
+6353,Other
+6355,Dairy & eggs
+6356,Meat & fish
+6357,Meat & fish
+6358,Sweets
+6359,Meat & fish
+6360,Meat & fish
+6361,Meat & fish
+6362,Dairy & eggs
+6364,Dairy & eggs
+6366,Meat & fish
+6367,Meat & fish
+6368,Other
+6369,Dairy & eggs
+6370,Dairy & eggs
+6372,Dairy & eggs
+6373,Dairy & eggs
+6374,Fruit & veg
+6375,Grains & bread
+6377,Dairy & eggs
+6378,Meat & fish
+6379,Fruit & veg
+6380,Meat & fish
+6381,Fats & oils
+6382,Meat & fish
+6383,Dairy & eggs
+6384,Other
+6385,Dairy & eggs
+6386,Dairy & eggs
+6387,Meat & fish
+6388,Dairy & eggs
+6389,Dairy & eggs
+6390,Meat & fish
+6391,Meat & fish
+6392,Dairy & eggs
+6393,Other
+6395,Dairy & eggs
+6396,Other
+6397,Dairy & eggs
+6398,Fruit & veg
+6399,Fruit & veg
+6400,Fruit & veg
+6401,Dairy & eggs
+6402,Fruit & veg
+6403,Other
+6404,Other
+6405,Other
+6406,Fruit & veg
+6407,Other
+6408,Dairy & eggs
+6409,Other
+6410,Other
+6411,Other
+6412,Fruit & veg
+6413,Other
+6414,Meat & fish
+6415,Other
+6416,Other
+6417,Fruit & veg
+6418,Dairy & eggs
+6419,Fruit & veg
+6420,Fruit & veg
+6421,Other
+6422,Fruit & veg
+6423,Fruit & veg
+6424,Other
+6425,Meat & fish
+6426,Fruit & veg
+6427,Fruit & veg
+6429,Fruit & veg
+6430,Dairy & eggs
+6431,Dairy & eggs
+6433,Fruit & veg
+6434,Grains & bread
+6436,Fruit & veg
+6437,Grains & bread
+6438,Fruit & veg
+6439,Dairy & eggs
+6440,Fruit & veg
+6441,Other
+6442,Other
+6446,Dairy & eggs
+6447,Dairy & eggs
+6448,Grains & bread
+6449,Dairy & eggs
+6450,Dairy & eggs
+6451,Fruit & veg
+6452,Other
+6453,Other
+6454,Other
+6455,Meat & fish
+6456,Meat & fish
+6457,Meat & fish
+6458,Meat & fish
+6459,Dairy & eggs
+6461,Other
+6462,Meat & fish
+6463,Other
+6466,Other
+6468,Grains & bread
+6469,Other
+6478,Other
+6479,Dairy & eggs
+6480,Grains & bread
+6481,Grains & bread
+6482,Grains & bread
+6494,Grains & bread
+6506,Fruit & veg
+6514,Other
+6542,Grains & bread
+6552,Other
+6553,Other
+6574,Grains & bread
+6576,Grains & bread
+6599,Dairy & eggs
+6624,Meat & fish
+6625,Meat & fish
+6628,Meat & fish
+6629,Meat & fish
+6630,Meat & fish
+6632,Dairy & eggs
+6651,Fats & oils
+6666,Other
+6675,Meat & fish
+6676,Grains & bread
+6677,Grains & bread
+6678,Fruit & veg
+6682,Fruit & veg
+6695,Other
+6701,Fruit & veg
+6702,Fruit & veg
+6703,Sweets
+6704,Sweets
+6705,Meat & fish
+6750,Dairy & eggs
+6757,Grains & bread
+6758,Grains & bread
+6759,Grains & bread
+6760,Dairy & eggs
+6761,Other
+6762,Fruit & veg
+6763,Sweets
+6764,Fruit & veg
+6765,Other
+6766,Dairy & eggs
+6767,Other
+6768,Grains & bread
+6769,Other
+6770,Other
+6780,Fruit & veg
+6781,Fruit & veg
+6782,Grains & bread
+6786,Other
+6790,Dairy & eggs
+6791,Dairy & eggs
+6792,Dairy & eggs
+6793,Dairy & eggs
+6795,Grains & bread
+6797,Grains & bread
+6801,Dairy & eggs
+6802,Sweets
+6803,Dairy & eggs
+6804,Dairy & eggs
+6807,Dairy & eggs
+6808,Dairy & eggs
+6809,Sweets
+6812,Dairy & eggs
+6813,Grains & bread
+6814,Dairy & eggs
+6815,Dairy & eggs
+6819,Grains & bread
+6829,Other
+6833,Grains & bread
+6843,Fruit & veg
+6849,Fruit & veg
+6850,Fruit & veg
+6852,Fruit & veg
+6855,Sweets
+6856,Sweets
+6857,Other
+6858,Other
+6862,Grains & bread
+6863,Other
+6864,Fruit & veg
+6865,Grains & bread
+6868,Grains & bread
+6869,Grains & bread
+6870,Grains & bread
+6871,Other
+6872,Other
+6875,Grains & bread
+6878,Grains & bread
+6879,Grains & bread
+6880,Grains & bread
+6881,Sweets
+6883,Sweets
+6884,Other
+6886,Sweets
+6888,Meat & fish
+6889,Meat & fish
+6890,Meat & fish
+6892,Meat & fish
+6893,Meat & fish
+6894,Meat & fish
+6895,Meat & fish
+6896,Meat & fish
+6897,Meat & fish
+6898,Fruit & veg
+6899,Fruit & veg
+6901,Fruit & veg
+6902,Sweets
+6903,Sweets
+6904,Sweets
+6907,Sweets
+6908,Sweets
+6909,Fruit & veg
+6910,Fruit & veg
+6912,Fruit & veg
+6913,Fruit & veg
+6914,Fruit & veg
+6920,Fats & oils
+6924,Sweets
+6925,Sweets
+6928,Grains & bread
+6931,Sweets
+6934,Fruit & veg
+6936,Other
+6937,Sweets
+6943,Meat & fish
+6945,Fruit & veg
+6946,Meat & fish
+6948,Fruit & veg
+6949,Meat & fish
+6950,Other
+6951,Meat & fish
+6952,Other
+6953,Dairy & eggs
+6955,Fruit & veg
+6956,Fruit & veg
+6958,Other
+6959,Dairy & eggs
+6966,Grains & bread
+6971,Meat & fish
+6972,Meat & fish
+6979,Sweets
+6984,Meat & fish
+6985,Grains & bread
+6986,Dairy & eggs
+6988,Fruit & veg
+6991,Fruit & veg
+6992,Sweets
+6993,Other
+6994,Other
+6996,Other
+6997,Other
+6998,Other
+6999,Grains & bread
+7000,Other
+7006,Other
+7011,Dairy & eggs
+7012,Dairy & eggs
+7015,Meat & fish
+7016,Other
+7018,Other
+7019,Other
+7020,Fruit & veg
+7021,Other
+7022,Dairy & eggs
+7023,Other
+7024,Other
+7025,Other
+7026,Grains & bread
+7027,Other
+7028,Grains & bread
+7029,Other
+7030,Grains & bread
+7031,Fats & oils
+7032,Other
+7034,Fruit & veg
+7035,Fruit & veg
+7042,Other
+7047,Other
+7048,Other
+7050,Other
+7051,Other
+7052,Other
+7053,Fruit & veg
+7054,Other
+7061,Meat & fish
+7062,Meat & fish
+7063,Meat & fish
+7066,Fats & oils
+7087,Dairy & eggs
+7088,Dairy & eggs
+7091,Sweets
+7135,Other
+7136,Other
+7137,Dairy & eggs
+7138,Dairy & eggs
+7139,Dairy & eggs
+7140,Dairy & eggs
+7141,Dairy & eggs
+7142,Dairy & eggs
+7143,Dairy & eggs
+7144,Other
+7145,Other
+7146,Dairy & eggs
+7147,Sweets
+7148,Dairy & eggs
+7149,Dairy & eggs
+7150,Meat & fish
+7152,Sweets
+7153,Dairy & eggs
+7154,Sweets
+7155,Meat & fish
+7156,Other
+7157,Dairy & eggs
+7158,Dairy & eggs
+7159,Meat & fish
+7160,Other
+7161,Other
+7162,Sweets
+7163,Other
+7166,Meat & fish
+7167,Meat & fish
+7169,Sweets
+7170,Sweets
+7171,Meat & fish
+7175,Other
+7177,Fruit & veg
+7179,Sweets
+7180,Other
+7181,Sweets
+7182,Other
+7183,Sweets
+7184,Sweets
+7185,Sweets
+7186,Sweets
+7187,Sweets
+7188,Other
+7190,Other
+7191,Dairy & eggs
+7192,Other
+7193,Other
+7194,Other
+7195,Other
+7196,Other
+7197,Other
+7198,Other
+7199,Other
+7200,Other
+7203,Other
+7204,Other
+7206,Sweets
+7207,Other
+7219,Dairy & eggs
+7221,Dairy & eggs
+7226,Sweets
+7231,Other
+7232,Fruit & veg
+7234,Sweets
+7235,Sweets
+7236,Sweets
+7244,Sweets
+7245,Sweets
+7254,Other
+7255,Sweets
+7256,Dairy & eggs
+7257,Dairy & eggs
+7259,Grains & bread

@@ -37,11 +37,19 @@ if __name__ == "__main__":
         "Wholegrain bread",     
     ]    
 
-## send every sample name through the engine and print group <- name   
+    ## send every sample name through the engine and print group <- name   
     for s in samples:     
         print(f"{classify(s):15s} <- {s}")
 
-## full run: classify every food in foods.csv 
+    ##  one row per food = its id number + our group
+    with open("foods.csv", newline="") as fin, open("food_groups.csv", "w", newline="") as fout:
+        reader = csv.DictReader(fin)                              
+        writer = csv.writer(fout)                               
+        writer.writerow(["nummer", "food_group"])              
+        for row in reader:                                     
+            writer.writerow([row["nummer"], classify(row["namn"])])
+
+    ## full run: classify every food in foods.csv 
     groups = Counter()                       
     with open("foods.csv", newline="") as f: 
         for row in csv.DictReader(f):        
@@ -56,7 +64,7 @@ if __name__ == "__main__":
             "fortified", "white", "salt", "product", "fat", "brine", "rtd", 
             "vol", "based", "plant", "fresh", "whole", "cooked",      
             "sauce", "soup", "protein"}
-            
+    ## diagnose        
     other_words = Counter()                  
     with open("foods.csv", newline="") as f: 
         for row in csv.DictReader(f):        
