@@ -40,12 +40,14 @@ brew --version
 gh --version
 brew install gh
 
-gh auth login --hostname github.com --web --git-protocol https   ## log in to github       ## opens the browser -> i get a OAuth access token
+#/ log into github
+gh auth login --hostname github.com --web --git-protocol https 
+/# opens the browser -> i get a OAuth access token
 
  2) create project
 
-mkdir -p ~/dev           ## make folder + missing parents
-cd ~/dev                 ## change directory
+mkdir -p ~/dev       ## make folder + missing parents
+cd ~/dev        ## change directory
 
 uv init nutrition_ops   ## generate starter files
 
@@ -55,10 +57,10 @@ cd nutrition_ops     ## go into the project
 cat .gitignore pyproject.toml   ## check what uv generated  
  /// always check file generators
 
-ls -la   ## list all files
-uv run main.py           ## runs it and makes .venv folder
+ls -la   ## list all files + hidden
+uv run main.py      ## runs it and makes .venv folder
 
-code .                 ## open the project in VS Code   
+code .      ## open the project in VS Code   
 #/ fill README (scope, disclaimer, data credit)
 
 /// no projects in Desktop/Documents -> permission + icloud sync troubles
@@ -71,7 +73,7 @@ code .                 ## open the project in VS Code
 
 mkdir docs      ## make a documentation folder
 code docs/prologue.md      ## make + open a file in VS Code
-touch climax.md epilogue.md
+touch climax.md epilogue.md     ## create the other documentation files
 
 3) Data + API inspection
 
@@ -103,7 +105,7 @@ curl -s "https://dataportal.livsmedelsverket.se/livsmedel/api/v1/livsmedel/1/nar
 
 curl -s "https://dataportal.livsmedelsverket.se/livsmedel/api/v1/livsmedel/1/naringsvarden?sprak=2" | python3 -c "import json,sys; print(len(json.load(sys.stdin)))"   
 ## how many nutrients
-## -c runs the code you pass in
+## -c to run the code you pass in
 ## importing json and sys for python to read terminal
 ## json.load turns text from sys.stdin into a normal python object
 
@@ -373,7 +375,7 @@ raw = {     ## one bundle to save
 with open("harvest_raw.json", "w", encoding="utf-8") as f: ## utf-8 keeps swedish letters safe
     json.dump(raw, f, ensure_ascii=False, indent=2) ## ensure_ascii=False -> å ä stay readable
 
-print(f"Raw harvest saved -> harvest_raw.json ({len(measurements)} measurements)")          ## confirm + count
+print(f"Raw harvest saved -> harvest_raw.json ({len(measurements)} measurements)")  ## confirm + count
 
 uv run harvest.py       ## run the full harvest  
 
@@ -480,4 +482,115 @@ head -1 foods.csv | tr ',' '\n' | grep -n ENERC   ## find ENERC in the header
 cat .gitignore     ## check for raw harvest
 echo "harvest_raw.json" >> .gitignore
 git status      ## no harvest_raw
+git add -A     
+git status      
+git commit -m "nutrition_ops: API harvest + dataset build pipeline" 
+git log --oneline       
+gh repo create nutrition_ops --public --spurce=. --remote=origin --push  # first push
 
+---
+/// the nordics didn't label on food-groups
+#/ build food-group classifier
+#/ tally the words that appear across all food names, show the top 30
+python3 -c "
+import csv, re
+from collections import Counter
+words = Counter()       ## a tally box (word -> count)
+with open('foods.csv', newline='') as f:
+    for row in csv.DictReader(f):       ## each row as a dict keyed by header
+        for w in re.findall(r'[a-z]+', row['namn'].lower()):        ## pull letter-only words
+            if len(w) > 2:      ## skip tiny noise (of, e, g)
+                words[w] += 1
+for w, n in words.most_common(30):      ## top 30 most frequent
+    print(f'{n:5d}  {w}')"
+
+touch label_foods.py
+
+# Food Labeling
+
+import re       ## regex, used to split a name into whole words
+
+## RULES: ordered list, FIRST match wins. order = priority -> settle collision on purpose
+## "beef tallow" -> Fats, "chocolate milk" -> Sweets.
+## ?? bare "fat" is a trap (low fat, 80% fat) -> we list oil/lard/tallow instead.
+RULES = [                                                                                 
+    ("Sweets",        ["chocolate", "sugar", "candy", "cake", "biscuit", "jam", "honey"]), 
+    ("Fats & oils",   ["oil", "butter", "margarine", "lard", "tallow", "spread", "ghee"]), 
+    ("Dairy & eggs",  ["cheese", "milk", "cream", "yoghurt", "yogurt", "egg"]),            
+    ("Meat & fish",   ["meat", "beef", "pork", "chicken", "sausage", "ham", "fish", "cod"]),
+    ("Grains & bread",["bread", "wheat", "wholegrain", "rice", "pasta", "oat", "flour"]),   
+    ("Fruit & veg",   ["fruit", "potato", "apple", "berry", "tomato", "carrot", "onion"]),  
+]                                                                                         
+DEFAULT = "Other"       ## catch-all when no matches
+
+def classify(name):     ## take one food name and return it's group
+    words = set(re.findall(r"[a-z]+", name.lower()))    ## split name into set of whole lowercase words
+    for group, keywords in RULES:       ## walk the rules in priority order (first match wins)
+        for kw in keywords:     ## check each keyword belonging to this rule
+            if kw in words:     ## TRUE only if kw is a WHOLE word -> kills the oil/boiled trap
+                return group        ## first matching group wins -> hand it back
+    return DEFAULT      ## nothing matched? -> Other
+
+if __name__ == "__main__":      ## run test block only when the file is run directly
+    samples = [     ## tricky names that prove the logic
+        "Beef tallow",      ## Fats (tallow), not Meat (beef)
+        "Low fat milk 0.5%",        ## Dairy (milk); fat must NOT trigger Fats
+        "Chocolate milk drink",     ## Sweets (chocolate beats milk by order)
+        "Potato boiled",        ## Fruit & veg - boiled must NOT match oil anymore
+        "Soy milk",     ## documented collision -> Dairy (milk)
+        "Wholegrain bread",     ## Grains
+    ]       
+    for s in samples:       ## loop over each sample name
+        print(f"{classify(s):15s} <- {s}")      ## print group padded 15
+
+#/ full run: classify every food in foods.csv 
+    groups = Counter()      ## tally box: group name -> how many foods got it
+    with open("foods.csv", newline="") as f:        ## newline="" is the csv-safe way
+        for row in csv.DictReader(f):       ## read each row as a dict keyed by the header
+            groups[classify(row["namn"])] += 1      ## classify this food's name, +1 to that group
+    print()     ## blank line, separates samples from the real counts
+    for group, n in groups.most_common():       ## list groups from most foods to fewest
+        print(f"{group:15s} {n}")       ## group (padded to 15) then its count
+    print(f"{'TOTAL':15} {sum(groups.values())}")      ## sanity check -> must equal 2575
+
+ ## diagnose Other:
+    other_words = Counter()         ## tally box for words found in Other foods
+    with open("foods.csv", newline="") as f:        ## open the dataset again
+        for row in csv.DictReader(f):       ## walk every row
+            if classify(row["namn"]) == "Other":        ## keep only the ones that fell to Other
+                for w in re.findall(r"[a-z]+", row["namn"].lower()):    ## split that name into words
+                    if len(w) > 2:      ## skip tiny noise (of, e, g)
+                        other_words[w] += 1     ## add 1 to this word's tally
+    print()     ## spacer line
+    print("top words inside Other:")        ## header for the diagnostic
+    for w, n in other_words.most_common(25):        ## the 25 most common words in Other
+        print(f"{n:5d}  {w}")       ## count, then the word
+
+#/ replacing in rules
+
+("Meat & fish",   ["meat", "beef", "pork", "chicken", "sausage", "ham", "fish", "cod", "veal"]),  
+## animal protein
+("Fruit & veg",   ["fruit", "potato", "potatoes", "apple", "berry", "tomato", "tomatoes", "carrot", "carrots", "onion", "onions", "vegetable", "vegetables", "bean", "beans", "pea", "peas", "soy"]),  
+## plants (+ plurals, + soy/veg)
+
+#/ replace/add in diagnostic flag
+## already judged
+    SKIP = {"raw", "fried", "frozen", "boiled", "canned", "dried", "homemade", 
+            "fortified", "white", "salt", "product", "fat", "brine", "rtd",    
+            "vol", "based", "plant", "fresh", "whole", "cooked",               
+            "sauce", "soup", "protein"}                                        
+
+if len(w) > 2:
+to
+if len(w) > 2 and w not in SKIP:        ## skip tiny words AND known ones
+
+print("top words inside Other:")
+to
+print("top UNKNOWN words inside Other:")    ## header
+
+#/ replace
+("Dairy & eggs",  ["cheese", "milk", "cream", "yoghurt", "yogurt", "egg", "fraiche"]),
+
+("Meat & fish",   ["meat", "beef", "pork", "chicken", "sausage", "ham", "fish", "cod", "veal", "salmon", "herring", "lamb", "liver", "fillet"]),
+
+("Fruit & veg",   ["fruit", "potato", "potatoes", "apple", "berry", "tomato", "tomatoes", "carrot", "carrots", "onion", "onions", "vegetable", "vegetables", "bean", "beans", "pea", "peas", "soy", "salad", "cabbage", "corn", "mushroom", "orange"]),
