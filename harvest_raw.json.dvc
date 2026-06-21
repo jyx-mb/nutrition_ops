@@ -1,0 +1,5 @@
+outs:
+- md5: ef61cf2f73c89b1ed0bf8a79b942ba8b
+  size: 20504146
+  hash: md5
+  path: harvest_raw.json

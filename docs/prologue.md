@@ -654,7 +654,7 @@ data = data.drop(columns=["VITD_x_µg"])    ## drop the ~59%-empty vitamin-D col
 
 uv run clean_dataset.py     
 
-#/delete blank cell rows
+#/ delete blank cell rows
 data = data.dropna()
 /// data.dropna() just returns a new table, needs reassignment data =   
 
@@ -668,4 +668,65 @@ uv run clean_dataset.py     ## same output, just get new folder
 wc -l model_data.csv        ## count it's lines
 /// without index=False no bueno, adds nameless extra column of row numbers
 
+#/ separate features from target
+#/ inputs it learns from -> nutrient numbers
+#/ answers it must predict -> foods.csv
 
+touch train_baseline.py
+
+import pandas as pd     ## load pandas
+
+data = pd.read_csv("model_data.csv")        ## read the cleaned 1727-row table
+
+y = data["food_group"]      ## target: the food group we want to predict
+X = data.drop(columns=["nummer", "namn", "version", "food_group"])  ## keep only the 58 nutrient columns
+
+print("X:", X.shape)        ## features size = rows × nutrient columns
+print("y:", y.shape)        ## target size = one label per row
+
+uv run train_baseline.py    
+
+uv add scikit-learn scipy joblib threadpoolctl      ## scikit-fiesta
+
+#/ hide 20% of the data so we can grade the model on rows it never saw
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y,       ## features and target to split
+    test_size=0.2,      ## hold out 20% for the test set
+    random_state=42,        ## fixed seed -> identical split every run
+    stratify=y,     ## both sets maintain exact same proportion as original dataset #gucci
+)
+
+print("train:", X_train.shape)      ## size of the training set
+print("test:", X_test.shape)        ## size of the held-out test set
+
+uv run train_baseline.py        # split added run
+
+/// asking uv for sklearn fails, scikit-learn needed 
+/// no random_state -> split reshuffles every run
+
+
+#/ train baseline and score
+#/ gon use decision tree 
+#/ add to train_baseline.py
+
+from sklearn.tree import DecisionTreeClassifier     ## simple, readable baseline model
+from sklearn.metrics import accuracy_score, classification_report       ## scoring tools
+
+model = DecisionTreeClassifier(random_state=42)     ## create the tree
+model.fit(X_train, y_train)     ## learn nutrient -> group rules from the TRAINING set
+
+predictions = model.predict(X_test)     ## asking trained tree to label UNSEEN test rows
+
+accuracy = accuracy_score(y_test, predictions)      ## fraction of test rows it got right
+print("accuracy:", round(accuracy, 3))      ## the baseline number to beat
+
+print(classification_report(y_test, predictions))       ## (precision/recall/support)
+
+uv run train_baseline.py
+/# 70% prediction #gucci
+
+git status 
+git add -A
+git status
+git commit -m "Prologue [x], cleaning pipeline + decision tree model (~70% acc)"
+git push 
