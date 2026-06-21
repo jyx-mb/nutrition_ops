@@ -594,3 +594,78 @@ print("top UNKNOWN words inside Other:")    ## header
 ("Meat & fish",   ["meat", "beef", "pork", "chicken", "sausage", "ham", "fish", "cod", "veal", "salmon", "herring", "lamb", "liver", "fillet"]),
 
 ("Fruit & veg",   ["fruit", "potato", "potatoes", "apple", "berry", "tomato", "tomatoes", "carrot", "carrots", "onion", "onions", "vegetable", "vegetables", "bean", "beans", "pea", "peas", "soy", "salad", "cabbage", "corn", "mushroom", "orange"]),
+
+#/ push to github
+
+git add -A      
+git status      
+git commit -m " food-grouping keyword labeler (label_foods.py)"
+git status      
+git log --oneline       
+git push        
+
+#/ persists the labels:
+    with open("foods.csv", newline="") as fin, open("food_groups.csv", "w", newline="") as fout:
+    /# file in, file out
+        reader = csv.DictReader(fin)        ## reader = read foods.csv as labeled rows
+        writer = csv.writer(fout)       ## writer = write plain comma rows out
+        writer.writerow(["nummer", "food_group"])       ## header row: our two output columns
+        for row in reader:      ## walk every food in the source table
+            writer.writerow([row["nummer"], classify(row["namn"])])     ## write its id + computed group
+
+
+python label_foods.py       ## run the script (creates the file as a side effect)
+head -5 food_groups.csv      ## peek at the first 5 lines: header + 4 labeled foods
+
+wc -l food_groups.csv       ## count the lines in the file
+
+touch docs/labeling.md
+#/ write documentation
+
+git commit -m "Level 1: persist food-group labels + labeling docs"      ## save point, clear message
+git push        ## publish to origin/main
+git log --oneline -1       ## expecting HEAD
+git status --short     ## prologue.md should be the only one left
+
+/// decided not to keep other as a class. mostly condiments, sauces and whatnot
+
+#/ cleaning
+
+touch clean_dataset.py
+uv add pandas
+
+#/ build modeling table
+import pandas as pd     ## load pandas
+
+foods = pd.read_csv("foods.csv")        ## read the 2575×62 nutrient table
+labels = pd.read_csv("food_groups.csv")     ## read labels (nummer, food_group)
+
+data = foods.merge(labels, on="nummer")     ## join nutrients to their label on the shared id
+
+data = data[data["food_group"] != "Other"]      ## drop the Other rows
+
+print("shape:", data.shape)     ## rows × columns left after dropping Other
+print(data.dtypes.value_counts())       ## count columns by type (object = text = suspicious)
+print(data.isna().sum().sort_values(ascending=False).head(15))      ## top 15 columns by missing values
+
+uv run clean_dataset.py     ## run the inspection script
+
+data = data.drop(columns=["VITD_x_µg"])    ## drop the ~59%-empty vitamin-D column
+
+uv run clean_dataset.py     
+
+#/delete blank cell rows
+data = data.dropna()
+/// data.dropna() just returns a new table, needs reassignment data =   
+
+uv run clean_dataset.py
+
+/# 1727 rows, 62 columns (abt 3% loss)
+
+data.to_csv("model_data.csv", index=False)      ## save cleaned 1727-row table
+
+uv run clean_dataset.py     ## same output, just get new folder
+wc -l model_data.csv        ## count it's lines
+/// without index=False no bueno, adds nameless extra column of row numbers
+
+
