@@ -3,11 +3,11 @@ name = "nutrition_ops"
 version = "0.1.0"
 description = "Educational MLOps pipeline: food recommendations from Swedish Food Agency open data" 
 readme = "README.md"
-requires-python = ">=3.14"
+requires-python = ">=3.13,<3.14"
 dependencies = [
     "dvc>=3.67.1",
-    "mlflow>=1.27.0",
-    "pandas>=3.0.3",
+    "mlflow>=3",
+    "pandas<3",
     "requests>=2.34.2",
     "scikit-learn>=1.9.0",
 ]
