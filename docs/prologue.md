@@ -1,3 +1,5 @@
+# Level 0 + Level 1
+
 | Level | theme | what it delivers |
 |---|---|
 | 0 | being | repo, venv, Git, first commit |
@@ -9,20 +11,24 @@
 
 ## prologue — Level 0 setup + Level 1 harvest
 
-Notation legend:                                                                             ##  what it's done
+Notation legend:
+#   title comment
+<>  working file
+##  comment                                                                             
 #/  what i'm about to do
 /#  what just happened
 /// important note
 ??  need to check
+//  note
 
-
-0) Audit first   /// overwriting an existing install can cause headaches
+#/  create the working environment
+/// overwriting an existing install can cause headaches
 
 git --version            
 python3 --version       
 uv --version            
 
-1) git, editor, shell settings
+
 
 git config --global user.name "jyx-mb"  ## identity on commits
 git config --global user.email "robert@digitalmaniacs.org"      ## email on commits
@@ -42,9 +48,7 @@ brew install gh
 
 #/ log into github
 gh auth login --hostname github.com --web --git-protocol https 
-/# opens the browser -> i get a OAuth access token
-
- 2) create project
+/# opened the browser -> got a OAuth access token
 
 mkdir -p ~/dev       ## make folder + missing parents
 cd ~/dev        ## change directory
@@ -69,13 +73,11 @@ code .      ## open the project in VS Code
 /// ls failed and reached sudo out of reflex -> sudo is never step one;
 /// the gh wizard gave me a fine-grained PAT -> the token prefix tells you which: githubPAT vs gho_ -> revoked the old one
 
----
-
 mkdir docs      ## make a documentation folder
 code docs/prologue.md      ## make + open a file in VS Code
 touch climax.md epilogue.md     ## create the other documentation files
 
-3) Data + API inspection
+#/ Data + API inspection
 
 curl "https://dataportal.livsmedelsverket.se/livsmedel/api/v1/api-info"   ## call the api
 /# apiName, apiVersion "1.0.0", apiReleased "2024-03-18", docs URL, apiStatus active
@@ -112,17 +114,17 @@ curl -s "https://dataportal.livsmedelsverket.se/livsmedel/api/v1/livsmedel/1/nar
 curl -s "https://dataportal.livsmedelsverket.se/livsmedel/api/v1/livsmedel/1/naringsvarden?sprak=2" | python3 -m json.tool | grep -c '"namn":'   ## count the names another way
 
  #/ plan a script
- #/ ask sprak2 list endpoint for a page, read totalRecords from _meta; make an empty list for foods; from offset 0 until all foods harvested: get a page, save each food's nr/name/version, move offset by the page size; for each food get its naringsvarden (sprak=2); from each nutrient keep euroFIRkod, varde, enhet tagged with food nr. <-- Extract + Transform
+ ## ask sprak2 list endpoint for a page, read totalRecords from _meta; make an empty list for foods; from offset 0 until all foods harvested: get a page, save each food's nr/name/version, move offset by the page size; for each food get its naringsvarden (sprak=2); from each nutrient keep euroFIRkod, varde, enhet tagged with food nr. <-- Extract + Transform
 
 /// hammering the site with lots of requests could get my IP blocked
  #/ load into foods.csv + metadata.json
  #/ use time module + time.sleep(0.2)
 
- ---
+# Harvest
 
 code ~/dev/nutrition_ops/harvest.py    #/ start writing the harvest
 
-<#> Harvest
+<> harvest.py
 
 from datetime import datetime, timezone   ## date + time tools
 started_at = datetime.now(timezone.utc).isoformat()   ## same ISO time format as the API
@@ -136,16 +138,13 @@ uv run harvest.py   ## run it
 ?? how many foods are there
 
 pip install requests   ## get the requests library
-/// old habit - that installs outside uv's managed env
+// old habit - that installs outside uv's managed env
 
 uv add requests   ## add requests the uv way
 
-uv run python -c "import requests; print(requests.__version__)"   ## check it imports + show version, via uv   ??
-
+uv run python -c "import requests; print(requests.__version__)"   ## check imports + version, via uv 
 grep requests pyproject.toml   ## confirm requests in dependecies
 
-
-## Harvest
 
 import requests   ## for http calls
 
@@ -162,50 +161,52 @@ print(f"Total Foods Available: {total}")   ## show it
 
 curl -s "https://dataportal.livsmedelsverket.se/livsmedel/api/v1/livsmedel?offset=0&limit=2575&sprak=2" | python3 -c "import json,sys; print(json.load(sys.stdin)['_meta'])"   ## prit _meta, watch the count
 
+#/ print top keys
 curl -s "https://dataportal.livsmedelsverket.se/livsmedel/api/v1/livsmedel?offset=0&limit=1&sprak=2" | python3 -c "import json,sys; print(list(json.load(sys.stdin).keys()))"   
 
-## print top-level keys
-/// keys stay swedish, only values get translated
+// keys stay swedish, only values get translated
 
-## Harvest
-## get every food, keep just the basics
+#/ get every food, keep just the basics
+
+<> harvest.py
 
 resp = requests.get(f"{BASE}/livsmedel", params={"offset": 0, "limit": total, "spark": 2})   
 ## one call gets all foods
 
-resp.raise_for_status()  ## stop if it failed
-foods_raw = resp.json()["livsmedel"]    ## pull the list of foods out
+resp.raise_for_status()                     ## stop if it failed
+foods_raw = resp.json()["livsmedel"]        ## pull the list of foods out
 
-basket = []      ## empty basket
-for food in foods_raw:      ## lopp the foods
-    basket.append({      ## add a small dict
-        "nummer": food["nummer"],       ## stable id (never translated)
-        "namn": food["namn"],      ## english name (spark=2)
-        "version": food["version"]    ## timestamp
+basket = []                                 ## empty basket
+for food in foods_raw:                      ## lopp the foods
+    basket.append({                         ## add a small dict
+        "nummer": food["nummer"],           ## stable id (never translated)
+        "namn": food["namn"],               ## english name (spark=2)
+        "version": food["version"]          ## timestamp
     })
 
-print(f"Foods collected: {leb(basket)}")  ## how many did i keep
-print(f"First in basket: {basket[0]}")    ## peek at one to check shape
+print(f"Foods collected: {leb(basket)}")    ## how many did i keep
+print(f"First in basket: {basket[0]}")      ## peek at one to check shape
 
 uv run harvest.py   ## run it   ??
 
-## Harvest
+<> harvest.py
 
-first_nummer = basket[0]["nummer"]       ## id of the first food   #/ get its nutrients
+first_nummer = basket[0]["nummer"]          ## id of the first food to get its nutrients
 
-n_resp = requests.get(   ## get nutrients from the first food
-    f"{BASE}/livsmedel/{first_nummer}/naringsvarden",   ## the food id goes in the url
-    params={"sprak": 2},     ## language stays a query param
+n_resp = requests.get(                      ## get nutrients from the first food
+    f"{BASE}/livsmedel/{first_nummer}/naringsvarden",       ## the food id goes in the url
+    params={"sprak": 2},                    ## language stays a query param
 )
 n_resp.raise_for_status()   ## stop if it failed
 nutrients_raw = n_resp.json()     ## just a list of nutrients
 
-print(f"Nutrients for food {first_nummer}: {len(nutrients_raw)}") ## show how many
-print(f"First nutrient: {nutrients_raw[0]}")   ## peek at the first one
+#/ show how many nutrients and peek at the first one [0]
+print(f"Nutrients for food {first_nummer}: {len(nutrients_raw)}")   ## show how many
+print(f"First nutrient: {nutrients_raw[0]}")                        ## peek at the first one
 
-uv run harvest.py   ## run it   ??
+uv run harvest.py   ## run it 
 
-## Harvest
+<> harvest.py
 
 measurements = []            ## one flat list for every measurement
 for nutrient in nutrients_raw:                 ## go through the 58 records
@@ -221,7 +222,7 @@ print(f"Sample measurement: {measurements[0]}")   ## peek at one
 
 uv run harvest.py   ## run it   ??
 
-## Harvest
+<> harvest.py
 
 basket = []      ## empty list for the foods i keep
 for food in foods_raw:          ## go through each food from the api
@@ -244,13 +245,12 @@ for nutrient in nutrients_raw:       ## just testing: one food's nutrients
         "enhet": nutrient["enhet"],      ## the unit (mg, g, kJ, kcal ...)
     })
 
-/// Notes
-  first_nummer + the plain nutrients_raw = the "test one food first" bit.
-  the real harvest.py replaced this with the full 'for food in sample' loop,
-  plus try/except, timeout, and sleep — a tougher version.
-  euroFIRkod (the nutrient code) isn't unique on its own ( ENERC kJ/kcal clash).
-  the real column key became euroFIRkod + "_" + enhet.
-  see docs/incident0.md
+//  first_nummer + the plain nutrients_raw = the "test one food first" bit.
+//  the real harvest.py replaced this with the full 'for food in sample' loop,
+//  plus try/except, timeout, and sleep — a tougher version.
+//  euroFIRkod (the nutrient code) isn't unique on its own ( ENERC kJ/kcal clash).
+//  the real column key became euroFIRkod + "_" + enhet.
+//  see docs/incident0.md
 
 print(f"Measurements from food {first_nummer}: {len(measurements)}")   
 ## runs once, after the loop
@@ -258,7 +258,7 @@ print(f"Sample measurement: {measurements[0]}")   ## peek at one
 
 uv run harvest.py  
 
-## Harvest
+<> harvest.py
 
 import time       ## to pause btwn calls so i don't hammer the server
 
@@ -269,11 +269,11 @@ for food in sample:             ## outer loop: one food at a time
     nummer = food["nummer"]           ## this food's id (for the url + the tag)
 
     n_resp = requests.get(   ## get this food's nutrients
-        f"{BASE}/livsmedel/{nummer}/naringsvarden",
-        params={"sprak": 2},
+        f"{BASE}/livsmedel/{nummer}/naringsvarden", ## construct api endpoint for specific food
+        params={"sprak": 2},    ## english parameter
     )
     n_resp.raise_for_status()   ## crash early if the response is bad
-    nutrients_raw = n_resp.json()     
+    nutrients_raw = n_resp.json()     ## convert response to python list of dicts
 
     for nutrient in nutrients_raw:   ## inner loop: one nutrient at a time
         measurements.append({   ## one row per nutrient
@@ -293,7 +293,7 @@ print(f"Done. {len(sample)} foods, {len(measurements)} measurements total")   ##
 
 uv run harvest.py 
 
-## Harvest
+<> harvest.py
 
 ## ALL 2575 foods
 measurements = []        ## flat list for every measurement
@@ -323,11 +323,11 @@ for food in sample:     ## outer loop: one food at a time
 
 print(f"Done. {len(sample)} foods, {len(measurements)} measurements total")   ## final count
 
-/// this run errored partway and wasted time -> i need a safety net
+// this run errored partway, need a safety net
 
-## Harvest
+<> harvest.py
 
-## go through foods, get nutrients, survive failures, count
+#/ go through foods, get nutrients, survive failures, count
 
 measurements = []       ## flat list for every measurement
 failures = []       ## foods whose call failed - saved, not fatal
@@ -359,11 +359,11 @@ for food in sample:     ## outer loop: one food at a time
 
 print(f"Done. {len(sample)} foods attempted, {len(failures)} failed, {len(measurements)} measurements total")       ## final count
 
-## Harvest
+<> harvest.py
 
 import json     ## save python data as json file
 
-## the safety-net file
+## safety-net block 
 raw = {     ## one bundle to save
     "started_at": started_at,       ## when this harvest started
     "total_expected": total,        ## 2575, read live from _meta
@@ -379,15 +379,17 @@ print(f"Raw harvest saved -> harvest_raw.json ({len(measurements)} measurements)
 
 uv run harvest.py       ## run the full harvest  
 
-ls -lj harvest_raw.json     ## look at the saved file (typo: -lj)
+ls -lj harvest_raw.json     ## check the saved file
 
-pwd     ## where me balls at
+pwd  
 touch build_dataset.py      ## make the build script
 
-## Dataset
+# Dataset
+#/ build data set
 
-## build_dataset.py
-## reads harvest_raw.json (from disk, no api) -> foods.csv + metadata.json
+<> build_dataset.py
+
+#/ read harvest_raw.json (from disk, no api) -> foods.csv + metadata.json
 
 import json     ## read the raw file, write metadata
 import csv      ## write the wide table
@@ -427,7 +429,7 @@ with open("foods.csv", "w", encoding="utf-8", newline="") as f:
 print(f"foods.csv written: {len(foods)} rows x {len(fieldnames)} columns")  
 ## confirm rows x cols
 
-## write metadata.json
+#/ write metadata.json
 max_version = max(food["version"] for food in foods)        ## ISO dates sort by time
 metadata = {        ## the provenance info
     "source": "Livsmedelsverket (Swedish Food Agency) Food Database",
@@ -553,7 +555,7 @@ if __name__ == "__main__":      ## run test block only when the file is run dire
         print(f"{group:15s} {n}")       ## group (padded to 15) then its count
     print(f"{'TOTAL':15} {sum(groups.values())}")      ## sanity check -> must equal 2575
 
- ## diagnose Other:
+ #/ diagnose Other:
     other_words = Counter()         ## tally box for words found in Other foods
     with open("foods.csv", newline="") as f:        ## open the dataset again
         for row in csv.DictReader(f):       ## walk every row
