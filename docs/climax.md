@@ -304,3 +304,55 @@ def predict(req: PredictRequest):                                    ## FastAPI 
     return {"food_group": str(guess), "disclaimer": DISCLAIMER}      ## answer + disclaimer
 
 ---
+
+cd ~/dev/nutrition_ops
+uv run fastapi dev app.py     ## start the server
+
+?? -> http://127.0.0.1:8000/docs
+/# code 200 + disclaimer
+
+#/ build a test body
+
+vim test_body.py
+
+<> test_body.py
+
+## make_test_body.py -- throwaway helper: builds ONE real /predict test body from our data
+
+import pandas as pd          ## pandas: reads our CSV into a table (a DataFrame)
+import json                  ## json: turns a Python dict into JSON text we can paste
+import mlflow.sklearn        ## lets us load the saved model and read its exact feature list
+
+## point MLflow at the same local store the app uses (a relative file in the repo root)
+mlflow.set_tracking_uri("sqlite:///mlflow.db")
+
+## rebuild the trained tree from its logged run (the same run_id the app loads)
+model = mlflow.sklearn.load_model("runs:/be2a6a4c0a0b4af392b21be912150788/model")
+
+## the 58 nutrient column names, in the EXACT order the model learned them
+features = list(model.feature_names_in_)   ## feature_names_in_ is a numpy array -> make it a plain list
+
+## load the cleaned dataset (the 1727 rows we trained on)
+df = pd.read_csv("model_data.csv")
+
+## take the FIRST food row, but only the 58 feature columns
+row = df[features].iloc[0]                 ## df[features] = just those columns; .iloc[0] = first row by position
+
+## build a {name: value} dict, forcing plain Python floats (JSON cannot read numpy floats)
+features_dict = {key: float(value) for key, value in row.items()}
+
+## wrap it in the shape /predict expects: {"features": {...}}
+body = {"features": features_dict}
+
+## print it as pretty JSON, ready to copy-paste into Swagger
+print(json.dumps(body, indent=2))
+
+uv run python test_body.py
+
+-> http://127.0.0.1:8000/docs
+
+POST /predict -> expand -> try it -> wipe req body -> paste helper -> execute -> sv response -> 200 {}
+
+uv run python load_check.py
+uv run python test_body.py
+
