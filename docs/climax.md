@@ -356,3 +356,69 @@ POST /predict -> expand -> try it -> wipe req body -> paste helper -> execute ->
 uv run python load_check.py
 uv run python test_body.py
 
+___
+
+#/ pytest as dev dependecy 
+
+uv add --dev pytest
+vim pyproject.toml  # check new dep
+vim test_app.py     # automated checks for food-group API
+
+<> test_app.py
+
+from fastapi.testclient import TestClient       ## calls the app in-memory, no running server needed
+from app import app, FEATURES                   ## fastapi app object + 58 feature names
+
+client = TestClient(app)        # fake client wired to the app
+
+def test_root_heartbeat():
+    response = client.get("/")      ## call GET /
+    assert response.status_code == 200                    ## should be OK
+    assert response.json()["n_features_expected"] == 58   ## should report 58 features
+
+def test_predict_returns_food_group():
+    body = {"features": {name: 0.0 for name in FEATURES}}  ## all 58, dummy 0.0 values
+    response = client.post("/predict", json=body)          ## POST it to /predict
+    assert response.status_code == 200      ## should succeed
+    assert "food_group" in response.json()      ## response includes a food_group
+
+def test_predict_returs_food_group():
+    response = client.post("/predict", json={"features": {}})        ## send zero features
+    assert response.status_code == 422      ## should be rejected
+    assert len(response.json()["detail"]["missing_features"]) == 58  ## all 58 reported missing
+
+uv run pytest -v        # from repo root to let importing app load model
+
+
+uv add --dev pytest
+uv run pytest -v
+
+<> test_app.py
+
+def test_predict_returns_food_group():
+⇣⇣⇣
+def test_predict_rejects_empty():
+
+uv run pytest.py -v
+
+git status
+git add test_app.py pyproject.toml uv.lock .gitignore
+git diff --staged
+git commit -m "add pytests for the API (heartbeat, predict, 422)"
+git git log --oneline
+
+uv sync     ## install dep
+uv run fastapi dev app.py       start the API -> http://127.0.0.1:8000/docs
+uv run pytest -v        ## run tests
+
+vim README.md 
+
+cd ~/dev/nutrition_ops   ## move into the project repo
+git status               ## show staged / modified / untracked
+git log --oneline -3     ## show last 3 commits (HEAD + history)
+
+
+uv sync && uv run pytest -v     ## install deps, then run the tests verbosely
+uv run fastapi dev app.py       ## start the api
+
+.
