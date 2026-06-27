@@ -1,0 +1,17 @@
+## this file lists things docker should NOT copy into the build, to keep it fast and small
+#/// do NOT list mlflow.db or mlruns here, because the app needs them inside the image
+
+## the local virtual environment is huge (600+ MB) and gets rebuilt inside the container anyway
+.venv
+## the 20 MB raw data file is only used for training, not for serving
+harvest_raw.json
+## git history is not needed inside the image
+.git
+## python's cached bytecode folders, anywhere they appear
+**/__pycache__
+## pytest's cache folder
+.pytest_cache
+## the database backup we made before the path fix
+mlflow.db.bak
+## mac finder junk files, anywhere they appear
+**/.DS_Store
