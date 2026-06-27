@@ -421,4 +421,139 @@ git log --oneline -3     ## show last 3 commits (HEAD + history)
 uv sync && uv run pytest -v     ## install deps, then run the tests verbosely
 uv run fastapi dev app.py       ## start the api
 
-.
+docker --version     ## print the installed Docker version
+docker info          ## confirm the Docker engine is runnin
+___
+
+vim fix_mlflow.py
+
+<> fix_mlflow.py
+
+## i only run it one time, from inside the nutrition_ops folder
+
+import sqlite3      ## sqlite3 lets python open and change the mlflow.db database
+import shutil       ## shutil lets me copy a file, so i can make a backup first
+
+
+shutil.copy("mlflow.db", "mlflow.db.bak")     ## copy mlflow.db into a new file called mlflow.db.bak
+print("backup made: mlflow.db.bak")          ## print a message so i know the backup worked
+
+
+old_path = "/Users/jyx/dev/nutrition_ops/"    ## everything before "mlruns/" is the part that is not portable
+
+
+con = sqlite3.connect("mlflow.db")            ## open a connection to the mlflow.db file
+cur = con.cursor()                           ## the cursor is the thing that actually runs my sql commands
+
+
+cur.execute("UPDATE experiments SET artifact_location = REPLACE(artifact_location, ?, '')", (old_path,))   ## fix the experiments table
+
+cur.execute("UPDATE logged_models SET artifact_location = REPLACE(artifact_location, ?, '')", (old_path,)) ## fix the logged_models table
+
+cur.execute("UPDATE runs SET artifact_uri = REPLACE(artifact_uri, ?, '')", (old_path,))                    ## fix the runs table
+
+
+con.commit()                                 ## commit means save my changes into the file for real
+con.close()                                  ## close the connection now that i am done
+print("done, the paths are now relative")    ## print a message so i know it finished
+
+#/ run the script from repo-root
+cd ~/dev/nutrition_ops
+uv run python fix_mlflow.py
+
+#/ check
+uv run fastapi dev app.py -> http://127.0.0.1:8000
+___
+Docker plan: build a small Python 3.13 image, install deps with uv, copy in only what the API needs at runtime (app.py + mlflow.db + mlruns/), serve with fastapi run bound to 0.0.0.0.
+#/fastapi run instead of fastapi dev (dev binds to 127.0.0.1, meaning only reachable inside the containter)
+
+vim dockerfile
+
+#/start from an image that already has python 3.13
+FROM python:3.13-slim
+
+#/ /app as working folder inside container
+WORKDIR /app
+
+#/ install uv
+RUN pip install uv
+
+#/ copy just the 2 deps first, so docker can reuse this layer when only code changes later
+COPY pyproject.toml uv.lock ./
+
+#/ install deps in a venv inside
+## --frozen = obey the lockfile exactly, --no-intall-project = deps only, --no-dev = skip test tool
+
+RUN uv sync --frozen --no-install-project --no-dev
+#/ copy api code into the image
+COPY app.py ./
+
+## copy mlflow db (records where the model lives)
+COPY mlflow.db ./
+
+## copy the model files themselves (whole mlruns folder)
+COPY mlruns ./mlruns
+
+## put venv's programs on PATH for calling fastapi directly
+ENV PATH="/app/.venv/bin:$PATH"
+
+## tell docker the app listens on port 8000
+EXPOSE 8000
+
+## start the api in production mode on 0.0.0.0 to be reachable from outside of container
+CMD ["fastapi", "run", "app.py", "--host", "0.0.0.0", "--port", "8000"]
+
+vim .dockerignore
+
+## this file lists things docker should NOT copy into the build, to keep it fast and small
+#/// do NOT list mlflow.db or mlruns here, because the app needs them inside the image
+
+## the local virtual environment is huge (600+ MB) and gets rebuilt inside the container anyway
+.venv
+## the 20 MB raw data file is only used for training, not for serving
+harvest_raw.json
+## git history is not needed inside the image
+.git
+## python's cached bytecode folders, anywhere they appear
+**/__pycache__
+## pytest's cache folder
+.pytest_cache
+## the database backup we made before the path fix
+mlflow.db.bak
+## mac finder junk files, anywhere they appear
+**/.DS_Store
+
+#/ build the image
+docker build -t nutrition_ops 
+/# fail, no live engine running
+colima start
+docker ps ## check
+
+#/ run image & link port on my mac to port on container
+docker run -p 8000:8000 nutrition_ops 
+
+vim test_container.py
+
+## this script tests the /predict endpoint of my running docker container
+import pandas as pd     ## pandas reads my csv file
+import requests     ## requests sends http calls to my api
+
+
+data = pd.read_csv("model_data.csv")        ## load the csv into a table
+first_row = data.iloc[0]        ## grab row number 0, the first food
+
+
+label_columns = ["nummer", "namn", "version", "food_group"]   ## the non-feature columns
+
+
+features = {}       ## start with an empty dict
+for col in data.columns:        ## go through every column name
+    if col not in label_columns:        ## skip the four label columns
+        features[col] = float(first_row[col])       ## add the nutrient value as a plain float
+
+
+url = "http://127.0.0.1:8000/predict"                 ## the address of my api running in docker
+response = requests.post(url, json={"features": features})    ## post the body the api expects
+print("status code:", response.status_code)           ## 200 means it worked
+print("answer:", response.json())                     ## the predicted food group + disclaimer
+
