@@ -557,3 +557,11 @@ response = requests.post(url, json={"features": features})    ## post the body t
 print("status code:", response.status_code)           ## 200 means it worked
 print("answer:", response.json())                     ## the predicted food group + disclaimer
 
+vim README.md
+
+git status
+git add README.md fix_mlflow.py .dockerignore dockerfile test_container.py
+git commit -m ""
+git status
+git push
+git log --oneline
