@@ -1,5 +1,5 @@
-## this script tests the /predict endpoint of my running docker container
-## it takes one real food row from my data and sends its 58 nutrient numbers to the api
+## this tests the /predict endpoint of my running docker container
+## it takes one real food row from the data and sends its 58 nutrient numbers to the api
 import pandas as pd                                   
 import requests                                       
 

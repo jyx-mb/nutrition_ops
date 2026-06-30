@@ -194,3 +194,98 @@ add
         else:                                          ## reached it
             met = met + 1                              ## count this floor as met
     print("floors met:", met, "of", len(nutrient_columns))   ## expect every one
+
+
+#/ re-write solver.py
+
+<> solver.py
+
+import pandas as pd             ## read the CSV tables
+from scipy.optimize import linprog          ## the linear-programming solver
+
+
+targets = pd.read_csv("targets.csv")            ## the 18-nutrient targets file
+nutrient_columns = targets["our_column"].tolist()     ## foods.csv column name per nutrient, in order
+rda_floors = targets["rda"].tolist()        ## the daily floor per nutrient, same order
+
+
+foods = pd.read_csv("foods.csv")                      ## all 2575 foods
+
+
+def recommend(chosen_nummers):          ## the function the API will call
+    #/ keep only the chosen foods + their nutrient columns
+    chosen_foods = foods[foods["nummer"].isin(chosen_nummers)] ## rows whose nummer is in the user's list
+    food_values = chosen_foods[nutrient_columns]              ## just the nutrient columns (per 100 g)
+
+
+    c = [1] * len(chosen_foods)         ## weight 1 per food = add up all the grams
+
+
+
+    A_ub = []           ## left side, one row per nu
+    b_ub = []               ## right side, the negated floors
+    for column_name, floor in zip(nutrient_columns, rda_floors): ## each nutrient + its fl
+        row = []            ## this nutrient's per-gram amount per food
+        for value in food_values[column_name]:               ## per-100g value for each fo
+            row.append(-value / 100)            ## per-gram, negated for the flip
+        A_ub.append(row)            ## store the row
+        b_ub.append(-floor)         ## store the negated floor
+
+
+    result = linprog(c, A_ub=A_ub, b_ub=b_ub, bounds=(0, 300)) ## run the solver
+
+
+    if result.success:          ## the solver found a plan
+        plan = []           ## list of {food, grams}
+        for food, grams in zip(chosen_foods["namn"], result.x): ## pair each food with its grams
+            plan.append({"food": food, "grams": round(grams, 1)}) ## one row per food
+
+
+        met = 0         ## how many floors clear
+        for column_name, floor in zip(nutrient_columns, rda_floors): ## each nutrient + fl
+            got = 0         ## running total for this nutrient
+            for grams, value in zip(result.x, food_values[column_name]): ## each food's gr
+                got = got + (grams / 100) * value            ## add this food's contribution
+            if got >= floor - 0.01:         ## clears it (tiny rounding a
+                met = met + 1           ## count it
+
+        return {            ## the feasible answer
+            "feasible": True,           ## a plan exists
+            "plan": plan,                                    ## the gram amounts
+            "total_grams": round(result.x.sum(), 1),         ## total food for the day
+            "floors_met": met,          ## how many floors are met
+            "floors_total": len(nutrient_columns),           ## should equal floors_met wh
+        }
+
+
+    else:           ## no plan can meet every flo
+        blockers = []           ## the nutrients that fall short
+        for column_name, floor in zip(nutrient_columns, rda_floors): ## each nutrient + fl
+            most_possible = food_values[column_name].sum() * (300 / 100) ## max at 300 g of every food
+            if most_possible < floor:                        ## still short even maxed out
+                blockers.append({           ## record the honest gap
+                    "nutrient": column_name,                 ## which nutrient
+                    "best_possible": round(most_possible, 1), ## the most these foods can give
+                    "needed": floor,                         ## what the floor needs
+                })
+        return {            ## the honest "can't do it" a
+            "feasible": False,                               ## no plan for these foods
+            "blockers": blockers,                            ## exactly which nutrients fa
+        }
+
+
+if __name__ == "__main__":                                   ## only when run directly, not when imported
+    chosen_nummers = [123, 1255, 4941, 702, 553, 78]         ## the 6 test foods from Stag
+    answer = recommend(chosen_nummers)                       ## call the function
+    print("feasible:", answer["feasible"])                   ## did it work?
+    if answer["feasible"]:      ## yes - show the plan
+        for item in answer["plan"]:                          ## each food in the plan
+            print(item["food"], "->", item["grams"], "g")    ## name and grams
+        print("total grams:", answer["total_grams"])         ## total for the day
+        print("floors met:", answer["floors_met"], "of", answer["floors_total"]) ## regression check
+    else:                                                    ## no - show the blockers
+        for blocker in answer["blockers"]:                   ## each blocking nutrient
+            print(blocker["nutrient"], "- best:", blocker["best_possible"], "needed:", blocker["needed"])
+
+
+uv run fastapi dev app.py
